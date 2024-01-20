@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper,Times New Roman,UTF8]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{csquotes}
+\usepackage[
+backend=biber,
+style=authoryear-icomp,
+]{biblatex}
+\addbibresource{ref.bib} %Imports bibliography file
+\usepackage{graphicx} % Required for inserting images
+\usepackage{xcolor}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
+\renewcommand{\thesection}{} 
+\renewcommand{\thesubsection}{}
+\title{修正自然語言模型自身機制}
+\author{吳泰澄}
+\date{January 2024}
+
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{摘要}
+	自然語言本身因為訓練資料的不足常被控制或無意是的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試者將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前世上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制。
+	\section{壹、 研究動機}
+	\section{貳、 研究目的}
+	本研究旨在修復語言模型本身的缺陷。
+	\begin{enumerate}
+		\item 改善立場偏頗問題
+		\item 賦予角色意識
+	\end{enumerate}
+	\section{參、 研究工具：設備及器材}
+	本研究因系屬大型語言模型微調（fine-tune），故需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。
+	相關環境及軟體呈列如下：
+	\begin{itemize}
+		\item 作業系統：
+		\item 顯示卡：
+		\item 處理器：
+		\item 隨機存取記憶體：
+		\item 驅動程式、工具軟體：
+		\item 程式語言：
+		\item 使用套件：
+	\end{itemize}	
+	本次的測試環境及所有的程式均可在Github上找到，請參見：
+	\section{肆、 研究方法與程序}
+	\section{伍、 研究結果}
+	\section{陸、 討論}
+	\section{柒、 結論}
+	\section{捌、 參考文獻資料}
+	\printbibliography
+\end{CJK*}
+\end{document}
