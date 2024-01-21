@@ -23,6 +23,10 @@ before_deploy:
   - git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
 deploy:
   provider: releases
+  tag_name: $TRAVIS_TAG
+  target_commitish: $TRAVIS_COMMIT
+  name: $TRAVIS_TAG
+  overwrite: true
   api_key:
     secure: ${GITHUB_TOKEN}
   file:
