@@ -40,6 +40,7 @@ tlmgr install collection-langeuropean
 # We need to change the working directory before including a file
 cd "$(dirname "${BASH_SOURCE[0]}")"
 tlmgr install $(cat texlive_packages)
+texliveonfly  $TRAVIS_BUILD_DIR/main.tex
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0

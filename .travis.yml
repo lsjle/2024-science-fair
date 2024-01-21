@@ -23,7 +23,7 @@ deploy:
   api_key:
     secure: ${GITHUB_TOKEN}
   file:
-    - ./assignment01.pdf
+    - ./main.pdf
   skip_cleanup: true
   on:
     tags: true
