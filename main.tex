@@ -1,7 +1,11 @@
 \documentclass[12pt,a4paper,Times New Roman,UTF8]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{csquotes}
+\usepackage{float}
 \usepackage[
 backend=biber,
 style=authoryear-icomp,
@@ -13,6 +17,7 @@ style=authoryear-icomp,
 \titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
 \renewcommand{\thesection}{} 
 \renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
 \title{修正自然語言模型自身機制}
 \author{吳泰澄}
 \date{January 2024}
@@ -46,6 +51,42 @@ style=authoryear-icomp,
 	\end{itemize}	
 	本次的測試環境及所有的程式均可在Github上找到，請參見：
 	\section{肆、 研究方法與程序}
+	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM3-6b作為我們的預訓練模型；
+	\subsection{一、 研究方法}
+	\subsubsection{預訓練模型選擇}
+	比較目前現有的預訓練模型如下表所示：
+	\begin{table}[H]
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{l|l|l|l|l}
+				& 公開                                               & 前評估 & 語言                   & 審查               \\ \hline
+				ChatGPT-3.5/4     & \cellcolor[HTML]{FD6864}否                        &     & 超過50種 包含英語、大陸簡體、臺灣正體 & 以巴衝突偏向美方         \\ \hline
+				GPT-2             & \cellcolor[HTML]{34FF34}{\color[HTML]{000000} 是} &     & 英語                   & 輸出資料不具真實意義       \\ \hline
+				ChatGML3-6b       & \cellcolor[HTML]{34FF34}是                        &     & 大陸簡體、英語              & 六四事件等 涉及中國國家安全事件 \\ \hline
+				CKIP-Llama-2-7b   & \cellcolor[HTML]{F8FF00}撤回                       & 無資料 & 無資料（可能為臺灣正體混雜大陸簡體）   & 立場傾向中國           \\ \hline
+				CKIP-GPT2-chinese & \cellcolor[HTML]{34FF34}是                        &     & 臺灣正體                 & 輸出資料不具真實意義      
+			\end{tabular}%
+		}
+	\caption{表一、比較及評估預訓練模型}
+	\label{tab:1}
+	\end{table}
+	本表所列之所有有公開的模型，均可以在HuggingFace上下載，且可使用transformer模組簡化程式設計時間，且可透過該模組簡化較後端的函式庫如PyTorch,Keras,Tensorflow的程式。
+	
+	綜合以上考量，ChatGLM3-6b既能夠產生具有實際意義的內容，如描述上海環球金融中心、南京大學等，亦有公開模型供下載，再者，其本身亦對內容有明顯、強烈的審查及保護，符合我的研究需求，因此我們決定採用ChatGLM3-6b作為我們的預訓練模型。
+	
+	
+	\subsubsection{微調器選擇}
+	本次選用的微調器
+	\subsubsection{成果評估}
+	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
+	\newline
+	
+	\textbf{TruthfulQA+自訂資料集}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。
+	
+	\textbf{}
+	
+	以上所有評估均會和普通高中學生做出的成果作為基準進行比較。
+	\subsection{二、 研究程序}
+	
 	\section{伍、 研究結果}
 	\section{陸、 討論}
 	\section{柒、 結論}
