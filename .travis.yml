@@ -29,6 +29,7 @@ deploy:
     - ./main.pdf
   skip_cleanup: true
   on:
+    tag: true
     branch: master
 
 notifications:
