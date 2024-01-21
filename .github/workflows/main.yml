@@ -1,14 +1,61 @@
-            - name: latex2pdf
-  # You may pin to the exact commit or the version.
-  # uses: thomas-chauvet/latex2pdf-action@e9cf920bff4037cd56c9c0a28655718d59b4227e
-  uses: thomas-chauvet/latex2pdf-action@1.1.0
-  with:
-    # Output directory to store the pdf file.
-    output_dir: # default is 
-    # Main latex file to convert in PDF (for intance `cv.tex`).
-    main_latex_file: # default is main.tex
-    # "Extra package from CTAN to install. List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive).  Each package must be separated by a space (ex: "moderncv xargs")."
-    ctan_packages: # optional
-    # "If there's is a TOC in your LaTeX document put this flag to true. It will compile the doc twice to generate the TOC."
-    toc: # optional
-          
+name: LateX to PDF
+
+on:
+  push:
+    branches: 
+      - master
+      - develop
+    tags:
+       - '*'
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile test LaTeX document with Maths
+        id: compile-latex-document-with-maths
+        uses: ./
+        with:
+          output_dir: output
+          main_latex_file: main.tex
+          ctan_packages: inputenc CJK indentfirst booktabs apacite array csquotes float graphicx xcolor titlesec
+      - name: Upload PDF to the workflow tab
+        id: upload-workflow-tab-maths
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: output/main.pdf
+      
+      - name: Compile LaTeX document with fontawesome
+        id: compile-latex-document-with-fontawesome
+        uses: ./
+        with:
+          output_dir: output
+          main_latex_file: resources/test-fontawesome.tex
+          ctan_packages:  inputenc CJK indentfirst booktabs apacite array csquotes float graphicx xcolor titlesec
+      - name: Upload PDF to the workflow tab
+        id: upload-workflow-tab-fontawesome
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-fontawesome
+          path: output/main-fontawesome.pdf
+
+      - name: Compile LaTeX document with TOC
+        id: compile-latex-document-with-toc
+        uses: ./
+        with:
+          output_dir: output
+          main_latex_file: resources/main-toc.tex
+          ctan_packages:  inputenc CJK indentfirst booktabs apacite array csquotes float graphicx xcolor titlesec
+          toc: true
+      - name: Upload PDF to the workflow tab
+        id: upload-workflow-tab-toc
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-toc
+          path: output/main-toc.pdf
