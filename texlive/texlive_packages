@@ -1,0 +1,11 @@
+inputenc
+CJKutf8
+indentfirst
+booktabs
+apacite
+array
+csquotes
+float
+graphicx
+xcolor
+titlesec
