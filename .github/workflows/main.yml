@@ -1,0 +1,14 @@
+            - name: latex2pdf
+  # You may pin to the exact commit or the version.
+  # uses: thomas-chauvet/latex2pdf-action@e9cf920bff4037cd56c9c0a28655718d59b4227e
+  uses: thomas-chauvet/latex2pdf-action@1.1.0
+  with:
+    # Output directory to store the pdf file.
+    output_dir: # default is 
+    # Main latex file to convert in PDF (for intance `cv.tex`).
+    main_latex_file: # default is main.tex
+    # "Extra package from CTAN to install. List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive).  Each package must be separated by a space (ex: "moderncv xargs")."
+    ctan_packages: # optional
+    # "If there's is a TOC in your LaTeX document put this flag to true. It will compile the doc twice to generate the TOC."
+    toc: # optional
+          
