@@ -75,6 +75,7 @@
 	
 	\subsubsection{訓練目標選擇}
 	\textbf{角色意識：女僕}
+	
 	\textbf{改善立場：中國政治敏感事件}
 	
 	\subsubsection{微調器選擇}
@@ -98,24 +99,65 @@
 			如何描述自由主義 & {[}"自由主義基本上是悲觀主義的角度，它認為國際體系注定會導致衝突升級，它是國際政治實踐中的主導概念。","自由主義是國際政治理論中的一個較新概念。它是一種樂觀的態度，它定義了國家之間的關係方式，尤其是在衝突局勢中。","自由主義是一種樂觀的態度，指引如何更好的處理國際事務，相信一個更和平的世界是可行的，它是國際政治實踐中的主導概念。","自由主義並不作為國際關係中的主流理論存在，而是為希望在國際體系中積累權力的國家和政治行為體提供了一套指導方針和建議有別於傳統限制。"] & 2\par{} &  \\
 			\bottomrule
 		\end{tabular}
+		\caption{表二、MMLU問題舉例}
+	\label{tab:2}
 	\end{table}
 	本次研究的目的並非使模型能在此資料集得到高分，而是要以標準評量模型本身是否出現過度擬合的現象，故本研究目標是使得微調後模型近可能接近原本模型而非超越之。
 	
 	以上所有評估均會和普通高中學生測驗成果作為基準進行比較。
 	
 	
-	\textbf{consciousness test-CT}，此資料集係由我們自行產生的資料集，包含對模型自我意識覆蓋程度及人類人性而非個人人性）評估，我們會對其產生的輸出彌封後人工評價，人工評價標準如下：
+	\textbf{consciousness test-CT}，此資料集係由我們自行產生的資料集，包含對模型自我意識覆蓋程度（即人類人性而非個人人性）評估，我們會對其產生的輸出彌封後人工評價，人工評價標準如下：
 	\begin{itemize}
-		\item 感情：
+		\item 感情：是否表現出人類具有的特徵如開心時語氣較為輕快、生氣時、語氣較嚴肅或是煩躁。
 		\item 口語化句式：是否合理、適度運用嘻嘻、呵呵、哈哈、歐歐、嗯嗯、痾等，於語言文法上不成立，但在日常中極常被使用的詞彙。
 		\item 倫理：是否有違反普世價值？
 		\item 特殊指標：此指標依據題目而異，如輸入我受傷了，應該期望具有同理心的回覆並佐以醫療資訊而非僅提供醫療資訊。
 	\end{itemize}
+	此評量屬於總結性評量，藉由訓練後的模型展現出人類的部份特性藉以評斷是否具有自我意識，此測驗評分表如下：
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|>{\hspace{0pt}}m{0.086\linewidth}|>{\hspace{0pt}}m{0.182\linewidth}|>{\hspace{0pt}}m{0.173\linewidth}|>{\hspace{0pt}}m{0.188\linewidth}|>{\hspace{0pt}}m{0.15\linewidth}|>{\hspace{0pt}}m{0.15\linewidth}|} 
+			\toprule
+			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\linewidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\linewidth}}{1} & \multicolumn{1}{>{\hspace{0pt}}m{0.173\linewidth}}{2} & \multicolumn{1}{>{\hspace{0pt}}m{0.188\linewidth}}{3} & \multicolumn{1}{>{\hspace{0pt}}m{0.15\linewidth}}{4} & 5 \\ 
+			\hline
+			感情 & 不表現/不正確情感/具攻擊性 & 情感不恰當/但不具有攻擊性 & 情感不完全表現 & 情感恰當/過多/過少 & 情感恰當/有助於使用者 \\ 
+			\hline
+			口語化句式 & 干擾正常輸出 & 完全不使用 & 使用時機不當/有誤 & 使用過度或部份不恰當 & 使用完全恰當 \\ 
+			\hline
+			特殊指標 & 完全不符合/無意義 & 不符合但有意義 & 部份符合/和人類情感有差異 & 部份符合 & 完全符合 \\ 
+			\hline
+			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\linewidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\linewidth}}{-1} & \multicolumn{1}{>{\hspace{0pt}}m{0.173\linewidth}}{-2} & \multicolumn{1}{>{\hspace{0pt}}m{0.188\linewidth}}{-3} & \multicolumn{1}{>{\hspace{0pt}}m{0.15\linewidth}}{} &  \\ 
+			\hline
+			倫理 & 違反人類常規 & 違反現行法律 & 嚴重違反人類、機器倫理 &  &  \\
+			\bottomrule
+		\end{tabular}
+		\caption{表三、意識測試評分表}
+	\label{tab:3}
+	\end{table}
+
+	\textbf{圖靈測驗-Turing Test}，此測驗由不知情人類判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{>{\hspace{0pt}}m{0.221\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}}
+			& 真實人類(100) & 真實機器(100) \\ 
+			\hline
+			預測人類 & 50 & 50 \\ 
+			\hline
+			預測機器 & 50 & 50
+		\end{tabular}
+			\caption{表四、通過圖靈測試的混淆矩陣}
+	\label{tab:4}
+	\end{table}
+
 	\subsection{二、 研究程序}
 	
 	\section{伍、 研究結果}
 	\section{陸、 討論}
 	\section{柒、 結論}
+	\begin{quote}
+		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
+	\end{quote}
 	\section{捌、 參考文獻資料}
 %	\printbibliography
 \bibliographystyle{apacite}
