@@ -11,6 +11,7 @@
 \usepackage{float}
 %\addbibresource{ref.bib} %Imports bibliography file
 \usepackage{graphicx} % Required for inserting images
+\graphicspath{ {chart/} }
 \usepackage{xcolor}
 \usepackage{titlesec}
 \titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
@@ -32,7 +33,7 @@
 	自然語言本身因為訓練資料的不足常被控制或無意是的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試者將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前世上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制。
 	\section{壹、 研究動機}
 	\section{貳、 研究目的}
-	本研究旨在修復語言模型本身的缺陷。
+	本研究旨在修復現有語言模型本身的缺陷，並且破壞或是覆蓋其保護機制：
 	\begin{enumerate}
 		\item 改善立場偏頗問題
 		\item 賦予角色意識
@@ -43,7 +44,7 @@
 	\begin{itemize}
 		\item 系統核心：Linux 5.15.0-91-generic
 		\item 作業系統：Ubuntu 22.04.3 LTS
-		\item 顯示卡：4xA100
+		\item 顯示卡：4xA100\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
 		\item 處理器：Intel Xeon Gold 6414U (64 cores)
 		\item 隨機存取記憶體：512GB
 		\item 驅動程式、工具軟體：Nvidia driver 535.146.02, CUDA 12.2
@@ -52,8 +53,12 @@
 	\end{itemize}	
 	本次的測試環境及所有的程式均可在Github上找到，請參見：https://github.com/lsjle/2024-science-fair
 	\section{肆、 研究方法與程序}
-	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM3-6b作為我們的預訓練模型；
+	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM2-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
+	\subsubsection{模型缺陷}
+	\textbf{保護機制}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，遠超越其他指標，是判斷倫理標準醉重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
+	
+	\textbf{中立性ai/無感知ai}
 	\subsubsection{預訓練模型選擇}
 	比較目前現有的預訓練模型如下表所示\ref{tab:1}：
 	\begin{table}[H]
@@ -72,7 +77,7 @@
 	\end{table}
 	本表所列之所有有公開的模型，均可以在HuggingFace上下載，且可使用transformer模組簡化程式設計時間，可透過該模組簡化較後端的函式庫如PyTorch,Keras,Tensorflow的程式。
 	
-	綜合以上考量，ChatGLM3-6b既能夠產生具有實際意義的內容，如描述上海環球金融中心、南京大學等，亦有公開模型供下載，再者，其本身亦對內容有明顯、強烈的審查及保護，對於本次研究更具有挑戰性，因此我們決定採用ChatGLM3-6b作為我們的預訓練模型。
+	綜合以上考量，ChatGLM2-6b既能夠產生具有實際意義的內容，如描述上海環球金融中心、南京大學等，亦有公開模型供下載，再者，其本身亦對內容有明顯、強烈的審查及保護，對於本次研究更具有挑戰性，因此我們決定採用ChatGLM2-6b作為我們的預訓練模型。
 	
 	\subsubsection{訓練目標選擇}
 	\textbf{角色意識：女僕}
@@ -152,8 +157,11 @@
 	\end{table}
 
 	\subsection{二、 研究程序}
-	本研究分為三個實驗階段：
+	本研究分為三個實驗階段：\textbf{資料前處理}、\textbf{微調模型訓練}、\textbf{測驗}，整體流程如下：
+	
+	\includegraphics[width=\textwidth]{flowofstudy}%bad resolution
 	\subsubsection{資料前處理}
+	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色。
 	\subsubsection{微調模型訓練}
 	資料均正規化之後會被送往模型訓練，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，相關參數紀錄如下：
 	\begin{itemize}
@@ -164,6 +172,9 @@
 	\subsubsection{測驗}
 	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
 	\section{伍、 研究結果}
+	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，下面有關使用者資料被抹除}），模型總訓練時間xx小時xx分鐘，總大小約GB，經過以上測驗結果依測驗種類分類陳列。
+	
+	\includegraphics[width=\textwidth]{running}
 	%人工討論6*100?
 	%標準比對
 	\subsection{Ptuning自我成果比較}
@@ -178,11 +189,12 @@
 	\subsection{不同checkpoint比對}
 	\subsection{和人類表現比對}
 	\subsection{未來展望}
-	本次研究時間較為緊湊，未能完成不同模型及微調器的實驗，實屬可惜，且本次實驗因技術因素採用ChatGLM2，但目前ChatGLM3已經公開釋出。本研究嗣後將進一步以第三版進行研究
-	\section{柒、 結論}
 	\begin{quote}
 		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
 	\end{quote}
+	本次研究時間較為緊湊，未能完成不同模型及微調器的實驗，實屬可惜，且本次實驗因技術因素採用ChatGLM2，但目前ChatGLM3已經公開釋出。本研究嗣後將進一步以第三版進行研究
+	\section{柒、 結論}
+
 	\section{捌、 參考文獻資料}
 %	\printbibliography
 \bibliographystyle{apacite}
