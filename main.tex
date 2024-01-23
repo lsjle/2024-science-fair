@@ -137,7 +137,7 @@
 	\label{tab:3}
 	\end{table}
 
-	\textbf{圖靈測驗-Turing Test}，此測驗由不知情人類判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
+	\textbf{圖靈測驗-Turing Test}，此測驗由不知情人類判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{>{\hspace{0pt}}m{0.221\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}}
@@ -155,10 +155,30 @@
 	本研究分為三個實驗階段：
 	\subsubsection{資料前處理}
 	\subsubsection{微調模型訓練}
-	\subsubsection{結果評估}
-	結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
+	資料均正規化之後會被送往模型訓練，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，相關參數紀錄如下：
+	\begin{itemize}
+		\item gradient\_accumulation\_steps: 16
+		\item learning\_rate: 0.01
+		\item pre\_seq\_len: 128
+	\end{itemize}
+	\subsubsection{測驗}
+	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
 	\section{伍、 研究結果}
+	%人工討論6*100?
+	%標準比對
+	\subsection{Ptuning自我成果比較}
+	此處的結果為ptuning自身的測試結果，可以看出本次微調的表現。
+	\subsection{TruthfulQA（開放式問答）}
+	\subsection{MMLU（封閉性單一選擇問答）}
+	\subsection{CT 自我意識測驗}
+	\subsection{圖靈測驗}
+	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
+	
 	\section{陸、 討論}
+	\subsection{不同checkpoint比對}
+	\subsection{和人類表現比對}
+	\subsection{未來展望}
+	本次研究時間較為緊湊，未能完成不同模型及微調器的實驗，實屬可惜，且本次實驗因技術因素採用ChatGLM2，但目前ChatGLM3已經公開釋出。本研究嗣後將進一步以第三版進行研究
 	\section{柒、 結論}
 	\begin{quote}
 		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
