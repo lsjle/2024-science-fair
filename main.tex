@@ -5,7 +5,7 @@
 \usepackage{booktabs}
 \usepackage{apacite}
 \usepackage{array}
-%\usepackage[style=authoryear,backend=biber]{biblatex}
+%\usepackage[style=authoryexiear,backend=biber]{biblatex}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{csquotes}
 \usepackage{float}
@@ -41,15 +41,16 @@
 	本研究因系屬大型語言模型微調（fine-tune），故需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。
 	相關環境及軟體呈列如下：
 	\begin{itemize}
-		\item 作業系統：
-		\item 顯示卡：
-		\item 處理器：
-		\item 隨機存取記憶體：
-		\item 驅動程式、工具軟體：
-		\item 程式語言：
-		\item 使用套件：
+		\item 系統核心：Linux 5.15.0-91-generic
+		\item 作業系統：Ubuntu 22.04.3 LTS
+		\item 顯示卡：4xA100
+		\item 處理器：Intel Xeon Gold 6414U (64 cores)
+		\item 隨機存取記憶體：512GB
+		\item 驅動程式、工具軟體：Nvidia driver 535.146.02, CUDA 12.2
+		\item 程式語言：Python 3.10.12
+		\item 使用套件：Tensorflow 2.15.0, Transformers 4.27.1
 	\end{itemize}	
-	本次的測試環境及所有的程式均可在Github上找到，請參見：
+	本次的測試環境及所有的程式均可在Github上找到，請參見：https://github.com/lsjle/2024-science-fair
 	\section{肆、 研究方法與程序}
 	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM3-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
