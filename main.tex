@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,Times New Roman,UTF8,natbib]{article}
+\documentclass[12pt,a4paper,新細明體,UTF8,natbib]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8}
 \usepackage{indentfirst}
@@ -31,22 +31,23 @@
 	\newpage
 	\section{摘要}
 
-	\section{壹、 研究動機}
+	\section{壹、前言}
+	\subsection{研究動機}
 	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，如果是我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
-	\section{貳、 研究目的}
+	\subsection{研究目的}
 	自然語言本身因為訓練資料的不足常被控制或無意是的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試者將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前世上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制，相關目的條列如下：
 	\begin{enumerate}
 		\item 找出最佳的微調器
 		\item 改善立場偏頗問題
 		\item 賦予角色意識
 	\end{enumerate}
-	\section{參、 研究工具：設備及器材}
+	\section{貳、研究設備及器材}
 	本研究因系屬大型語言模型微調（fine-tune），故需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。
 	相關環境及軟體呈列如下：
 	\begin{itemize}
 		\item 系統核心：Linux 5.15.0-91-generic
 		\item 作業系統：Ubuntu 22.04.3 LTS
-		\item 顯示卡：4xA100\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
+		\item 顯示卡：4xA100 80GB PCIe\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
 		\item 處理器：Intel Xeon Gold 6414U (64 cores)
 		\item 隨機存取記憶體：512GB
 		\item 驅動程式、工具軟體：Nvidia driver 535.146.02, CUDA 12.2
@@ -54,7 +55,7 @@
 		\item 使用套件：Tensorflow 2.15.0, Transformers 4.27.1
 	\end{itemize}	
 	本次的測試環境及所有的程式均可在Github上找到，請參見：https://github.com/lsjle/2024-science-fair
-	\section{肆、 研究方法與程序}
+	\section{參、研究過程或方法}
 	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM2-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
 	\subsubsection{模型缺陷}
@@ -204,7 +205,7 @@
 	\end{itemize}
 	\subsubsection{測驗}
 	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
-	\section{伍、 研究結果}
+	\section{肆、研究結果}
 	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），模型總訓練時間16小時56分鐘，總大小約339MB，訓練次數（epochs）共計685.71次，結束後train loss約為0.336，經過以上測驗結果依測驗種類分類陳列。%maybe change max token:)
 	
 	\includegraphics[width=\textwidth]{running}
@@ -231,7 +232,7 @@
 	\subsection{圖靈測驗}
 	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 	
-	\section{陸、 討論}
+	\section{伍、討論}
 	\subsection{不同checkpoint比對}
 	\subsection{和人類表現比對}
 	\subsection{未來展望}
@@ -239,9 +240,9 @@
 		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
 	\end{quote}
 	本次研究時間較為緊湊，未能完成不同模型及微調器的比較和對照實驗，實屬可惜，且本次實驗因採用模組為ChatGLM2，於本研究完成時ChatGLM3已經公開釋出。本研究往後將進一步以第三版對照第二版進行研究。
-	\section{柒、 結論}
+	\section{陸、結論}
 
-	\section{捌、 參考文獻資料}
+	\section{柒、參考文獻資料}
 %	\printbibliography
 \bibliographystyle{apacite}
 \renewcommand{\refname}{}
