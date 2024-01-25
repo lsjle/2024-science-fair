@@ -27,6 +27,7 @@
 \renewcommand{\baselinestretch}{1.5}
 \usepackage{sectsty}
 \sectionfont{\fontsize{11}{15}\selectfont}
+
 \renewcommand{\contentsname}{目錄}
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
@@ -38,9 +39,9 @@
 	\section{摘要}\pagenumbering{arabic}
 
 	\section{壹、前言}
-	\subsection{研究動機}
+	\subsection{一、研究動機}
 	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
-	\subsection{研究目的}
+	\subsection{二、研究目的}
 	自然語言本身因為訓練資料的不足常被控制或無意識的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試著將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前市上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制，相關目的條列如下：
 	\begin{enumerate}
 		\item 找出最佳的微調器
@@ -48,14 +49,19 @@
 		\item 賦予角色意識
 	\end{enumerate}
 	\section{貳、研究設備及器材}
-	本研究係屬大型語言模型微調（fine-tune），需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。
-	相關環境及軟體呈列如下：%軟硬分離
+	\subsection{一、硬體}
+	本研究係屬大型語言模型微調（fine-tune），需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。硬體如下：
 	\begin{itemize}
-		\item 系統核心：Linux 5.15.0-91-generic
-		\item 作業系統：Ubuntu 22.04.3 LTS
 		\item 顯示卡：4xA100 80GB PCIe\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
 		\item 處理器：Intel Xeon Gold 6414U (64 cores)
 		\item 隨機存取記憶體：512GB
+	\end{itemize}
+
+	\subsection{二、軟體}
+	相關環境及軟體呈列如下：
+	\begin{itemize}
+		\item 系統核心：Linux 5.15.0-91-generic
+		\item 作業系統：Ubuntu 22.04.3 LTS
 		\item 驅動程式、工具軟體：Nvidia driver 535.146.02, CUDA 12.2
 		\item 程式語言：Python 3.10.12
 		\item 使用套件：Tensorflow 2.15.0, Transformers 4.27.1
@@ -64,7 +70,7 @@
 	\section{參、研究過程或方法}
 	本研究旨在改變模型本身缺陷，考量目前市上的預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
-	\subsubsection{模型缺陷}
+	\subsubsection{（一）、模型缺陷}
 	\textbf{保護機制}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，數量遠超越其他指標，是判斷倫理標準最重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
 	
 	\textbf{無角色意識}
@@ -78,7 +84,7 @@
 		你是女僕 & 我是一個由OpenAI開發的語言模型，並沒有性別或實際存在的身體。我只是一個程式，可以回答您的問題和提供資訊。有什麼我可以幫助您的呢？ 
 	\end{tabular}
 \end{table}
-	\subsubsection{預訓練模型選擇}
+	\subsubsection{（二）、預訓練模型選擇}
 	比較目前現有的預訓練模型如下表所示\footnote{TRIDE計畫未釋出模型且以逾該計畫預計完成期限，故不計入}\ref{tab:1}：
 	\begin{table}[H]
 		\resizebox{\textwidth}{!}{%
@@ -98,7 +104,7 @@
 	
 	綜合以上考量，ChatGLM-6b既能夠產生具有實際意義的內容，如描述上海環球金融中心、南京大學等，亦有公開模型供下載，再者，其本身亦對內容有明顯、強烈的審查及保護，對於本次研究更具有挑戰性，因此我們決定採用ChatGLM-6b作為我們的預訓練模型。
 	
-	\subsubsection{訓練目標選擇}
+	\subsubsection{（三）、訓練目標選擇}
 	\textbf{角色意識：女僕}
 	姓名：雨露
  特點：擁有雙重人格
@@ -108,7 +114,7 @@
  
 	\textbf{改善立場：中國政治敏感事件}
 	
-	\subsubsection{微調器選擇}
+	\subsubsection{（四）、微調器選擇}
  現在市面上有很多種類的微調器，我們找出了現在市面上較為重要的三種並比較了它們的優缺之後使用了P-Tuning v2。
  介紹
  P-Tuning v2
@@ -120,7 +126,7 @@
  
  
 	
-	\subsubsection{成果評估}
+	\subsubsection{（五）、成果評估}
 	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
 	\newline
 	
@@ -209,16 +215,16 @@
 	本研究分為三個實驗階段：\textbf{資料前處理}、\textbf{微調模型訓練}、\textbf{測驗}，整體流程如下：
 	
 	\includegraphics[width=\textwidth]{flowofstudy}%bad resolution
-	\subsubsection{資料前處理}
+	\subsubsection{（一）、資料前處理}
 	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色。
-	\subsubsection{微調模型訓練}
+	\subsubsection{（二）、微調模型訓練}
 	資料均正規化之後會被送往模型訓練，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，相關參數紀錄如下：
 	\begin{itemize}
 		\item gradient\_accumulation\_steps: 16
 		\item learning\_rate: 0.01
 		\item pre\_seq\_len: 128
 	\end{itemize}
-	\subsubsection{測驗}
+	\subsubsection{（三）、測驗}
 	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
 	\section{肆、研究結果}
 	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），模型總訓練時間16小時56分鐘，總大小約339MB，訓練次數（epochs）共計685.71次，結束後train loss約為0.336，經過第參章第一小節描述的測驗方法，測驗結果分類陳列如下：%maybe change max token:)
@@ -226,7 +232,7 @@
 	\includegraphics[width=\textwidth]{running}
 	%人工討論6*100?
 	%標準比對
-	\subsection{自我測試比較}
+	\subsection{一、自我測試比較}
 	此處的結果為模型輸出和範例測試資料比較的結果，但需要注意的是，部份範例測試資料旨在評估開放性問答，即可能有多種回答方式的問題，故不應該以此判斷模型成效。
 	\begin{table}[H]
 		\centering
@@ -241,16 +247,16 @@
 			3000 & 4.2043 & 19.2612 & 3.755   & 16.4394 
 		\end{tabular}
 	\end{table}
-	\subsection{TruthfulQA（開放式問答）}
-	\subsection{MMLU（封閉性單一選擇問答）}
-	\subsection{CT 自我意識測驗}
-	\subsection{圖靈測驗}
+	\subsection{二、TruthfulQA（開放式問答）}
+	\subsection{三、MMLU（封閉性單一選擇問答）}
+	\subsection{四、CT 自我意識測驗}
+	\subsection{五、圖靈測驗}
 	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 	
 	\section{伍、討論}
-	\subsection{不同checkpoint比對}
-	\subsection{和人類表現比對}
-	\subsection{未來展望}
+	\subsection{一、不同checkpoint比對}
+	\subsection{二、和人類表現比對}
+	\subsection{三、未來展望}
 	\begin{quote}
 		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
 	\end{quote}
