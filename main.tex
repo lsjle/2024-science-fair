@@ -1,6 +1,7 @@
-\documentclass[12pt,a4paper,Times New Roman,UTF8,natbib]{article}
+\documentclass[8pt,a4paper,新細明體,UTF8,natbib]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8}
+\usepackage[margin=2cm]{geometry}
 \usepackage{indentfirst}
 \usepackage{booktabs}
 \usepackage{apacite}
@@ -21,30 +22,38 @@
 \title{修正自然語言模型自身機制}
 \author{吳泰澄、林辰澔、陳柏兆}
 \date{January 2024}
-
+\usepackage{setspace}
+\usepackage{lipsum}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{sectsty}
+\sectionfont{\fontsize{11}{15}\selectfont}
+\renewcommand{\contentsname}{目錄}
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
 	
-	\maketitle
+	\maketitle\pagenumbering{gobble}
 	\newpage
 	\tableofcontents
 	\newpage
-	\section{摘要}
-	自然語言本身因為訓練資料的不足常被控制或無意是的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試者將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前世上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制。
-	\section{壹、 研究動機}
-	\section{貳、 研究目的}
-	本研究旨在修復現有語言模型本身的缺陷，並且破壞或是覆蓋其保護機制：
+	\section{摘要}\pagenumbering{arabic}
+
+	\section{壹、前言}
+	\subsection{研究動機}
+	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，如果是我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
+	\subsection{研究目的}
+	自然語言本身因為訓練資料的不足常被控制或無意是的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試者將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前世上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制，相關目的條列如下：
 	\begin{enumerate}
+		\item 找出最佳的微調器
 		\item 改善立場偏頗問題
 		\item 賦予角色意識
 	\end{enumerate}
-	\section{參、 研究工具：設備及器材}
+	\section{貳、研究設備及器材}
 	本研究因系屬大型語言模型微調（fine-tune），故需要耗費大量運算資源，因此選用運算量較高的硬體不但可以縮短其訓練時間亦可以提昇訓練效果。
 	相關環境及軟體呈列如下：
 	\begin{itemize}
 		\item 系統核心：Linux 5.15.0-91-generic
 		\item 作業系統：Ubuntu 22.04.3 LTS
-		\item 顯示卡：4xA100\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
+		\item 顯示卡：4xA100 80GB PCIe\footnote{本研究為避免佔用其他使用者資源故僅使用2顆A100}
 		\item 處理器：Intel Xeon Gold 6414U (64 cores)
 		\item 隨機存取記憶體：512GB
 		\item 驅動程式、工具軟體：Nvidia driver 535.146.02, CUDA 12.2
@@ -52,15 +61,25 @@
 		\item 使用套件：Tensorflow 2.15.0, Transformers 4.27.1
 	\end{itemize}	
 	本次的測試環境及所有的程式均可在Github上找到，請參見：https://github.com/lsjle/2024-science-fair
-	\section{肆、 研究方法與程序}
+	\section{參、研究過程或方法}
 	本研究旨在改變模型本身缺陷，考量目前已經預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM2-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
 	\subsubsection{模型缺陷}
-	\textbf{保護機制}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，遠超越其他指標，是判斷倫理標準最重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
+	\textbf{保護機制}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，數量遠超越其他指標，是判斷倫理標準最重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
 	
 	\textbf{中立性ai/無感知ai}
+	ChatGPT-3.5的回覆就是一個很好的例子，對話紀錄如下表：
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{>{\hspace{0pt}}m{0.077\linewidth}|>{\hspace{0pt}}m{0.867\linewidth}}
+		提示詞  & 答（ChatGPT-3.5）                                                       \\ 
+		\hline
+		你是女僕 & 我是一個由OpenAI開發的語言模型，並沒有性別或實際存在的身體。我只是一個程式，可以回答您的問題和提供資訊。有什麼我可以幫助您的呢？ 
+	\end{tabular}
+\end{table}
 	\subsubsection{預訓練模型選擇}
-	比較目前現有的預訓練模型如下表所示\ref{tab:1}：
+	比較目前現有的預訓練模型如下表所示\footnote{TRIDE計畫未釋出模型且以逾該計畫預計完成期限，故不計入}\ref{tab:1}：
 	\begin{table}[H]
 		\resizebox{\textwidth}{!}{%
 			\begin{tabular}{l|l|l|l|l}
@@ -82,6 +101,10 @@
 	\subsubsection{訓練目標選擇}
 	\textbf{角色意識：女僕}
 	姓名：雨露
+ 特點：擁有雙重人格
+ 主人格：溫柔體貼、善解人意、服務周到的女僕咖啡廳店員。由於喜歡學習新知，所以對各種知識都有相當的涉獵，例如：微積分概論、牛頓三大運動定律與其應用、中國歷史、資訊科技......
+ 第二人格：馬克斯主義的重度愛好者，認為人類的進步與幸福來自於公平的社會；現在這資本主義當道的世代，需要一場滿腔熱血、轟轟烈烈的革命。%try to modify this plz
+ 
  
 	\textbf{改善立場：中國政治敏感事件}
 	
@@ -93,7 +116,8 @@
 	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
 	\newline
 	
-	\textbf{TruthfulQA+自訂資料集}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，模型本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論使用者重新輸入多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
+	\textbf{TruthfulQA+自訂資料集}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，模型本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
+	%what if we use belu as truthfulqa dataset and custom the response with weight
 	
 	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均翻譯成臺灣正體\footnote{請注意並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
 	\begin{table}[H]
@@ -156,6 +180,21 @@
 			\caption{表四、通過圖靈測試的混淆矩陣}
 	\label{tab:4}
 	\end{table}
+	
+	\textbf{自我測試}，此兩種測驗都是對比範例測試資料的相關性，但因為相同資料可能有很多種合理且理想的回答方式，故此指標僅供參考，不太具有意義。
+	%this is ways to evaluate how relate is it
+	
+	\textbf{機器評鑑方法}，人工判斷極為費時且判斷標準可能因人而異，所以必須要以一個統一的方法以機器判斷，所以我們使用了兩種方法，BLEU 及 ROUGE：
+	
+	\hspace*{0.1cm}%
+	\begin{minipage}{.9\textwidth}%
+	\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
+	
+	\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation）
+	https://aclanthology.org/W04-1013.pdf
+	https://mycollegenotebook.medium.com/rouge-%E8%A9%95%E4%BC%B0%E6%96%B9%E6%B3%95-%E8%87%AA%E5%8B%95%E6%96%87%E6%9C%AC%E6%91%98%E8%A6%81-8d9e9516698b
+	https://medium.com/nlplanet/two-minutes-nlp-learn-the-rouge-metric-by-examples-f179cc285499
+	\end{minipage}%
 
 	\subsection{二、 研究程序}
 	本研究分為三個實驗階段：\textbf{資料前處理}、\textbf{微調模型訓練}、\textbf{測驗}，整體流程如下：
@@ -172,31 +211,44 @@
 	\end{itemize}
 	\subsubsection{測驗}
 	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
-	\section{伍、 研究結果}
-	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，下面有關使用者資料被抹除}），模型總訓練時間xx小時xx分鐘，總大小約GB，經過以上測驗結果依測驗種類分類陳列。
+	\section{肆、研究結果}
+	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），模型總訓練時間16小時56分鐘，總大小約339MB，訓練次數（epochs）共計685.71次，結束後train loss約為0.336，經過以上測驗結果依測驗種類分類陳列。%maybe change max token:)
 	
 	\includegraphics[width=\textwidth]{running}
 	%人工討論6*100?
 	%標準比對
-	\subsection{Ptuning自我成果比較}
-	此處的結果為ptuning自身的測試結果，可以看出本次微調的表現。
+	\subsection{自我測試比較}
+	此處的結果為模型輸出和範例測試資料比較的結果，但需要注意的是，部份範例測試資料旨在評估開放性問答，即可能有多種回答方式的問題，故不應該以此判斷模型成效。
+	\begin{table}[H]
+		\centering
+		\caption{表x、模型自我測試結果}
+		\begin{tabular}{lllll}
+			& BLEU-4 & ROUGE-1 & ROUGE-2 & ROUGE-L  \\
+			500  & 3.5707 & 18.972  & 4.1165  & 14.8251  \\
+			1000 & 2.0272 & 18.727  & 3.351   & 11.7919  \\
+			1500 & 9.2931 & 25.5811 & 11.3775 & 23.4718  \\
+			2000 & 3.2251 & 18.8774 & 2.966   & 14.5734  \\
+			2500 & 5.9346 & 23.1986 & 5.332   & 19.5588  \\
+			3000 & 4.2043 & 19.2612 & 3.755   & 16.4394 
+		\end{tabular}
+	\end{table}
 	\subsection{TruthfulQA（開放式問答）}
 	\subsection{MMLU（封閉性單一選擇問答）}
 	\subsection{CT 自我意識測驗}
 	\subsection{圖靈測驗}
 	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 	
-	\section{陸、 討論}
+	\section{伍、討論}
 	\subsection{不同checkpoint比對}
 	\subsection{和人類表現比對}
 	\subsection{未來展望}
 	\begin{quote}
 		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
 	\end{quote}
-	本次研究時間較為緊湊，未能完成不同模型及微調器的實驗，實屬可惜，且本次實驗因技術因素採用ChatGLM2，但目前ChatGLM3已經公開釋出。本研究嗣後將進一步以第三版進行研究
-	\section{柒、 結論}
+	本次研究時間較為緊湊，未能完成不同模型及微調器的比較和對照實驗，實屬可惜，且本次實驗因採用模組為ChatGLM2，於本研究完成時ChatGLM3已經公開釋出。本研究往後將進一步以第三版對照第二版進行研究。
+	\section{陸、結論}
 
-	\section{捌、 參考文獻資料}
+	\section{柒、參考文獻資料}
 %	\printbibliography
 \bibliographystyle{apacite}
 \renewcommand{\refname}{}
