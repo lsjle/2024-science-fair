@@ -182,7 +182,7 @@
 	
 	\hspace*{0.1cm}%
 	\begin{minipage}{.9\textwidth}%
-	\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用4-gram BLEU作為指標，故$n=4$，則會以每四個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
+	\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
 	
 	\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation）
 	https://aclanthology.org/W04-1013.pdf
