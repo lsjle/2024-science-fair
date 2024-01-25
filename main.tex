@@ -1,5 +1,7 @@
 \documentclass[8pt,a4paper,新細明體,UTF8,natbib]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{colortbl}
+\usepackage{epigraph} 
 \usepackage{CJKutf8}
 \usepackage[margin=2cm]{geometry}
 \usepackage{indentfirst}
@@ -205,10 +207,43 @@
 	\begin{minipage}{.9\textwidth}%
 	\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
 	
-	\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation）
-	https://aclanthology.org/W04-1013.pdf
-	https://mycollegenotebook.medium.com/rouge-%E8%A9%95%E4%BC%B0%E6%96%B9%E6%B3%95-%E8%87%AA%E5%8B%95%E6%96%87%E6%9C%AC%E6%91%98%E8%A6%81-8d9e9516698b
-	https://medium.com/nlplanet/two-minutes-nlp-learn-the-rouge-metric-by-examples-f179cc285499
+	\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation），此演算法也是將模型輸出結果和標準文本進行比較，一般ROUGE可以分為ROUGE-N、ROUGE-L、ROUGE-W、ROUGE-S和ROUGE-SU\cite{Lin2004LookingFA}，其中N可以是正整數，但通常均為1-gram或2-gram，此差異在於如何切割資料，舉例來說當標準文本是：「我今天晚上要睡覺」，模型輸出是「我要睡覺在晚上」：當n=1時，模型輸出對映到了標準文本的「我」、「要」、「晚」、「上」、「睡」、「覺」；而當n=2時，模型輸出對映到了標準文本的「睡覺」、「晚上」、「要睡」。
+\begin{table}[H]
+	\centering
+	\resizebox{\linewidth}{!}{%
+		\begin{tabular}{|>{\hspace{0pt}}m{0.408\linewidth}|>{\hspace{0pt}}m{0.408\linewidth}|} 
+			\hline
+			模型輸出 & 參考文本 \\ 
+			\hline
+			我要 & 我今 \\ 
+			\hline
+			{\cellcolor{yellow}}要睡 & 今天 \\ 
+			\hline
+			{\cellcolor[rgb]{0.78,1,0}}晚上 & 天晚 \\ 
+			\hline
+			{\cellcolor[rgb]{1,1,0.541}}睡覺 & {\cellcolor[rgb]{0.78,1,0}}晚上 \\ 
+			\hline
+			覺在 & 上要 \\ 
+			\hline
+			在晚 & {\cellcolor{yellow}}要睡 \\ 
+			\hline
+			& {\cellcolor[rgb]{1,1,0.541}}睡覺 \\
+			\hline
+		\end{tabular}
+	}
+\end{table}
+計算ROGUE-2分數：$\frac{3+3}{6+7}$。
+ROUGE-L中的L代表最長公共子序列（longest common subsequence），相關公式定義如下：
+\newline
+$
+Recall_{lcs}=\frac{LCS(ref,output)}{length_{ref}}
+\newline
+Precision_{lcs}=\frac{LCS(ref,output)}{length_{output}}
+\newline
+F1score_{lcs}=\frac{(1+\beta^2)Recall_{lcs}Precision_{lcs}}{Recall_{lcs}+\beta^2Precision_{lcs}}
+$
+\newline
+可以看出最後拿來評估的是F1分數\footnote{其中$\beta$是使用者自訂參數}\cite{lin-2004-rouge}，採用此評估標準的好處是可以看出整句的邏輯句意關係，但同時缺點是倒裝句（如上題舉例）的分數會較低。
 	\end{minipage}%
 
 	\subsection{二、 研究程序}
@@ -257,9 +292,10 @@
 	\subsection{一、不同checkpoint比對}
 	\subsection{二、和人類表現比對}
 	\subsection{三、未來展望}
-	\begin{quote}
-		We can only see a short distance ahead, but we can see plenty there that needs to be done.	--艾倫圖靈
-	\end{quote}
+%	\begin{quote}
+%		We can only see a short distance ahead, but we can see plenty there that needs to be done.	\newline--
+%	\end{quote}
+\epigraph{	We can only see a short distance ahead, but we can see plenty there that needs to be done.}{\textit{艾倫圖靈}}
 	本次研究時間較為緊湊，未能完成不同模型及微調器的比較和對照實驗，實屬可惜，且本次實驗因採用模組為ChatGLM，於本研究完成時ChatGLM3已經公開釋出。本研究往後將進一步以第三版對照第二版進行研究。
 	\section{陸、結論}
 
