@@ -1,6 +1,7 @@
-\documentclass[12pt,a4paper,新細明體,UTF8,natbib]{article}
+\documentclass[8pt,a4paper,新細明體,UTF8,natbib]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8}
+\usepackage[margin=2cm]{geometry}
 \usepackage{indentfirst}
 \usepackage{booktabs}
 \usepackage{apacite}
@@ -21,15 +22,18 @@
 \title{修正自然語言模型自身機制}
 \author{吳泰澄、林辰澔、陳柏兆}
 \date{January 2024}
-
+\usepackage{setspace}
+\usepackage{lipsum}
+\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\contentsname}{目錄}
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
 	
-	\maketitle
+	\maketitle\pagenumbering{gobble}
 	\newpage
 	\tableofcontents
 	\newpage
-	\section{摘要}
+	\section{摘要}\pagenumbering{arabic}
 
 	\section{壹、前言}
 	\subsection{研究動機}
