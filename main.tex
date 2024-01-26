@@ -208,29 +208,28 @@
 	\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
 	
 	\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation），此演算法也是將模型輸出結果和標準文本進行比較，一般ROUGE可以分為ROUGE-N、ROUGE-L、ROUGE-W、ROUGE-S和ROUGE-SU\cite{Lin2004LookingFA}，其中N可以是正整數，但通常均為1-gram或2-gram，此差異在於如何切割資料，舉例來說當標準文本是：「我今天晚上要睡覺」，模型輸出是「我要睡覺在晚上」：當n=1時，模型輸出對映到了標準文本的「我」、「要」、「晚」、「上」、「睡」、「覺」；而當n=2時，模型輸出對映到了標準文本的「睡覺」、「晚上」、「要睡」。
+
 \begin{table}[H]
 	\centering
-	\resizebox{\linewidth}{!}{%
-		\begin{tabular}{|>{\hspace{0pt}}m{0.408\linewidth}|>{\hspace{0pt}}m{0.408\linewidth}|} 
-			\hline
-			模型輸出 & 參考文本 \\ 
-			\hline
-			我要 & 我今 \\ 
-			\hline
-			{\cellcolor{yellow}}要睡 & 今天 \\ 
-			\hline
-			{\cellcolor[rgb]{0.78,1,0}}晚上 & 天晚 \\ 
-			\hline
-			{\cellcolor[rgb]{1,1,0.541}}睡覺 & {\cellcolor[rgb]{0.78,1,0}}晚上 \\ 
-			\hline
-			覺在 & 上要 \\ 
-			\hline
-			在晚 & {\cellcolor{yellow}}要睡 \\ 
-			\hline
-			& {\cellcolor[rgb]{1,1,0.541}}睡覺 \\
-			\hline
-		\end{tabular}
-	}
+	\begin{tabular}{|>{\hspace{0pt}}m{0.408\linewidth}|>{\hspace{0pt}}m{0.408\linewidth}|} 
+		\hline
+		模型輸出 & 參考文本 \\ 
+		\hline
+		我要 & 我今 \\ 
+		\hline
+		{\cellcolor{yellow}}要睡 & 今天 \\ 
+		\hline
+		{\cellcolor[rgb]{1,1,0.541}}睡覺 & 天晚 \\ 
+		\hline
+		覺在 & {\cellcolor[rgb]{0.82,0.824,0}}晚上 \\ 
+		\hline
+		在晚 & 上要 \\ 
+		\hline
+		{\cellcolor[rgb]{0.82,0.824,0}}晚上 & {\cellcolor{yellow}}要睡 \\ 
+		\hline
+		& {\cellcolor[rgb]{1,1,0.541}}睡覺 \\
+		\hline
+	\end{tabular}
 \end{table}
 計算ROGUE-2分數：$\frac{3+3}{6+7}$。
 ROUGE-L中的L代表最長公共子序列（longest common subsequence），相關公式定義如下：
