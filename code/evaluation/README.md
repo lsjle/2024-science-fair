@@ -5,4 +5,5 @@ then mannual score other three metrics
 finish and then write the report
 
 MMLU datasets come from https://huggingface.co/datasets/lukaemon/mmlu
-TQAZH currently is not usable. Currently its translation is weird.
+TQAZH currently is not usable. Currently its translation is weird. however i translate it to traditional chinese with opencc
+
