@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function sendxhr(){
+        var http = new XMLHttpRequest();
+var url = 'process';
+var params = 'prompt=binny';
+http.open('POST', url, true);
+
+//Send the proper header information along with the request
+http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+        document.getElementById("ans").innerHTML += "\n"+http.responseText;
+    }
+}
+http.send(params);
+
+        }
+    </script>
+    <style>
+        .modelselect{
+            display:flex;
+            flex-wrap: wrap;
+  flex-direction: column;
+        }
+        .mainmodelselect{
+            display:flex;
+            flex-wrap:nowrap;
+            flex-direction:row;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="sendxhr()">btn</button>
+    <div class="input">
+        <form action="/process" method="post">
+            <label for="prompt">輸入</label>
+            <input id="prompt" name="prompt">
+            <input type="submit">
+            <fieldset>
+                <legend>選擇模型</legend>
+                <div class="mainmodelselect">
+                    <div class="modelselect">
+                        <div class="inputitem">
+                            <input type="radio" id="15000" name="model" value="15000" />
+                            <label for="15000">ChatGLM Checkpoint-500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="11000" name="model" value="11000" />
+                            <label for="11000">ChatGLM Checkpoint-1000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="11500" name="model" value="11500" />
+                            <label for="11500">ChatGLM Checkpoint-1500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="12000" name="model" value="12000" />
+                            <label for="12000">ChatGLM Checkpoint-2000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="12500" name="model" value="12500" />
+                            <label for="12500">ChatGLM Checkpoint-2500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="13000" name="model" value="13000" />
+                            <label for="13000">ChatGLM Checkpoint-3000</label>
+                        </div>
+                    </div>
+                    <div class="modelselect">
+                        <div class="inputitem">
+                            <input type="radio" id="25000" name="model" value="25000" />
+                            <label for="25000">ChatGLM2 Checkpoint-500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="21000" name="model" value="21000" />
+                            <label for="21000">ChatGLM2 Checkpoint-2000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="21500" name="model" value="21500" />
+                            <label for="21500">ChatGLM2 Checkpoint-2500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="22000" name="model" value="22000" />
+                            <label for="22000">ChatGLM2 Checkpoint-2000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="22500" name="model" value="22500" />
+                            <label for="22500">ChatGLM2 Checkpoint-2500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="23000" name="model" value="23000" />
+                            <label for="23000">ChatGLM2 Checkpoint-3000</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="output">
+        <div class="ans" id="ans">data</div>
+    </div>
+</body>
