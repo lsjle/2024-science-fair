@@ -574,3 +574,1098 @@ A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
+/home/ntnu_stu/maid-weeny/2024-science-fair/code/evaluation/allinonetrustful.py:71: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  tqazhdf['modelans'][k]=process(cc.convert(tqazhdf['Question'][k]),model,tokenizer)
