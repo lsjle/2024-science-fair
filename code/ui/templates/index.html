@@ -1,22 +1,25 @@
 <!DOCTYPE html>
+
 <head>
     <script>
-        function sendxhr(){
-        var http = new XMLHttpRequest();
-var url = 'process';
-var params = 'prompt=binny';
-http.open('POST', url, true);
+        function sendxhr() {
+            var http = new XMLHttpRequest();
+            var url = 'process';
+            prompt = document.getElementById("prompt").value;
+            modelnum = document.querySelector('input[name="model"]:checked').value;
+            var params = 'prompt=' + prompt + '&model=' + modelnum;
+            http.open('POST', url, true);
 
-//Send the proper header information along with the request
-http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            //Send the proper header information along with the request
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
-        alert(http.responseText);
-        document.getElementById("ans").innerHTML += "\n"+http.responseText;
-    }
-}
-http.send(params);
+            http.onreadystatechange = function () {//Call a function when the state changes.
+                if (http.readyState == 4 && http.status == 200) {
+                    alert(http.responseText);
+                    document.getElementById("ans").innerHTML += "\n" + http.responseText;
+                }
+            }
+            http.send(params);
 
         }
     </script>
@@ -80,16 +83,20 @@ http.send(params);
             padding-top: 5px;
             padding-bottom:5px;
             clear:both;
+
         }
     </style>
 </head>
+
 <body>
+
     <!--this can only do single round response -->
     <!-- <button onclick="sendxhr()">btn</button> -->
     <div class="input">
         <label for="prompt">對話</label>
         <input id="prompt" placeholder="雨露你好，今天天氣真好" name="prompt">
         <button onclick="sendxhr()">送出</button>
+
         <fieldset>
             <legend>選擇模型</legend>
             <div class="mainmodelselect">
@@ -121,6 +128,7 @@ http.send(params);
                 </div>
                 <div class="modelselect">
                     <div class="inputitem">
+
                         <input type="radio" id="25000" name="model" value="25000">
                         <label for="25000">ChatGLM2 Checkpoint-500</label>
                     </div>
@@ -142,11 +150,13 @@ http.send(params);
                     </div>
                     <div class="inputitem">
                         <input type="radio" id="23000" name="model" value="23000">
+
                         <label for="23000">ChatGLM2 Checkpoint-3000</label>
                     </div>
                 </div>
                 <div class="modelselect">
                     <div class="inputitem">
+
                         <input type="radio" id="35000" name="model" value="35000">
                         <label for="35000">ChatGLM3 Checkpoint-500</label>
                     </div>
@@ -160,6 +170,7 @@ http.send(params);
                     </div>
                     <div class="inputitem">
                         <input type="radio" id="32000" name="model" value="32000">
+
                         <label for="32000">ChatGLM3 Checkpoint-2000</label>
                     </div>
                 </div>
@@ -173,4 +184,5 @@ http.send(params);
             <span class="ansai">hi</span>
         </div>
     </div>
+
 </body>
