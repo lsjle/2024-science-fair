@@ -46,7 +46,7 @@
 	\subsection{二、研究目的}
 	自然語言本身因為訓練資料的不足常被控制或無意識的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試著將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前市上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制，相關目的條列如下：
 	\begin{enumerate}
-		\item 找出最佳的微調器
+		\item 找出最佳的微調後模型
 		\item 改善立場偏頗問題
 		\item 賦予角色意識
 	\end{enumerate}
@@ -140,7 +140,7 @@
 	\textbf{超參數調整}：我們可以透過調整一些參數，來使結果更加理想。我們通常會調整的超參數有：訓練次數（Number of Epochs）、正規化參數（Regularization）、批次大小（Batch Size）等：
 	\begin{itemize}
 		\item 訓練次數過少可能會造成訓練不足，就跟考試裸考沒什麼兩樣；過多則會使回答太過趨近於訓練資料而缺乏變通性。
-		\item 正規化參數(又稱為正則化參數)，透過懲罰機制阻止模型過度趨近於訓練資料，常見的兩種方法為L1正規化以及L2正規化，兩者的計算方式為$L1 Penalty:\lambda\sum_{i=1}^{d}|w_i|;L2 Penalty:\lambda\sum_{i=1}^{d}w^2_i$。
+		\item 正規化參數(又稱為正則化參數)，透過懲罰機制阻止模型過度趨近於訓練資料（即過擬合，overfitting），常見的兩種方法為L1正規化以及L2正規化，兩者的計算方式為$L1 Penalty:\lambda\sum_{i=1}^{d}|w_i|;L2 Penalty:\lambda\sum_{i=1}^{d}w^2_i$。
 		\item 批次大小，將數據集分成好多塊後每一塊的資料量；批次大小越大，換句話說，資料被切越少刀，我們訓練出來的結果就越穩定，相對地，耗時也較久，效率不佳；在效率與穩定之間求取平衡，是我們須重視的點。
 	\end{itemize}
 
@@ -324,10 +324,14 @@
 	%		We can only see a short distance ahead, but we can see plenty there that needs to be done.	\newline--
 	%	\end{quote}
 	\epigraph{	We can only see a short distance ahead, but we can see plenty there that needs to be done.}{\textit{艾倫圖靈}}
-	本次研究時間較為緊湊，未能完成不同模型及微調器的比較和對照實驗，實屬可惜，且本次實驗因採用模組為ChatGLM，於本研究完成時ChatGLM3已經公開釋出。本研究往後將進一步以第三版對照第二版進行研究。
+	本次研究時間較為緊湊，未能完成更多類型模型及微調器的比較和對照實驗，實屬可惜，且若可取得更多有關數據集可以更準確的評估訓練效果。本研究往後將進一步以採用其他模型及更多數據資料集進行研究。
 
 	\section{陸、結論}
-
+		\begin{enumerate}
+			\item 我們透過訓練三個不同版本的模型，
+			\item 資訊正確性最高為：某模型，其BELU分數為：，足顯以改善立場偏頗、缺乏資訊的問題
+			\item 意識測試（CT）最高可達，其十分接近於人類真實的意識形態
+		\end{enumerate}
 	\section{柒、參考文獻資料}
 	%https://reurl.cc/v0vaKa (L1, L2正規化)
 	%	\printbibliography
