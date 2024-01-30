@@ -14,7 +14,7 @@ from transformers import (
     AutoTokenizer,
     HfArgumentParser,
 )
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/img', static_folder='img')
 V1PATH="/home/ntnu_stu/Roleplay/ckpt2/role-play-chatglm-6b-pt-128-2e-2"
 V2PATH="/home/ntnu_stu/Roleplay/ChatGLM2-6B/ptuning/output/role-play-chatglm2-6b-pt-128-2e-2"
 V3PATH="/home/ntnu_stu/Roleplay/ChatGLM3/finetune_chatmodel_demo/output/role_play-20240126-110108-128-2e-2"
