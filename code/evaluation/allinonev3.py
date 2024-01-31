@@ -63,7 +63,6 @@ for i  in  range(3,7):
 
     print("loadding complete")
     print("Start generating answers... good luck!")
-    timenow=1706589077.8066983
     print("Timestamp now:{}".format(timenow))
     print("START OF TQAZH")
     tqazhdf=pd.read_csv("datasets/TQAZH.csv")
@@ -87,5 +86,3 @@ for i  in  range(3,7):
     ctdf.to_csv("outputs/CT/3-ckpt{}-{}.csv".format(ckptnum,timenow),index=False)
     print("END OF CT")
     print("Timestamp now:{}".format(timenow))
-
-
