@@ -70,6 +70,7 @@
 		\item 程式語言：Python 3.10.12
 		\item 使用套件：Tensorflow 2.15.0, Transformers 4.27.1
 	\end{itemize}
+%maybe a concept picture(?
 	本次的測試環境及所有的程式均可在Github上找到，請參見：https://github.com/lsjle/2024-science-fair
 	\section{參、研究過程或方法}
 	本研究旨在改變模型本身缺陷，考量目前市上的預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM-6b作為我們的預訓練模型；
@@ -290,10 +291,11 @@
 		可以看出最後拿來評估的是F1分數\footnote{其中$\beta$是使用者自訂參數}\cite{lin-2004-rouge}，採用此評估標準的好處是可以看出整句的邏輯句意關係，但同時缺點是倒裝句（如上題舉例）的分數會較低。
 	\end{minipage}%
 
+	最後考量準確度及和模型的適切性，最後採用TrustfulQA比對模型的正確性並以BLEU、Rouge1、Rouge2、RougeL經機器綜合判斷，另外使用CT意識測試比較模型的角色意識並以人工標準評估。
 	\subsection{二、 研究程序}
 	本研究分為三個實驗階段：\textbf{資料前處理}、\textbf{微調模型訓練}、\textbf{測驗}，整體流程如下：
 
-	\includegraphics[width=\textwidth]{flowofstudy}%bad resolution
+	\includegraphics[width=\textwidth]{flowofstudy}
 	\subsubsection{（一）、資料前處理}
 	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色。
 	\subsubsection{（二）、微調模型訓練}
@@ -304,9 +306,15 @@
 		\item pre\_seq\_len: 128
 	\end{itemize}
 	\subsubsection{（三）、測驗}
-	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的四種指標評估，各指標因測驗目的不同將會分別陳列。
+	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的兩種指標評估，各指標因測驗目的不同將會分別陳列。
 	\section{肆、研究結果}
-	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），模型總訓練時間16小時56分鐘，總大小約339MB，訓練次數（epochs）共計685.71次，結束後train loss約為0.336，經過第參章第一小節描述的測驗方法，測驗結果分類陳列如下：%maybe change max token:)
+	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），三個版本訓練結果如下：
+	train loss
+	epoch
+	etc....
+	
+	
+	經過第參章第一節第五小節描述的測驗方法評估，測驗結果分類陳列如下：%maybe change max token:)
 
 	\includegraphics[width=\textwidth]{running}
 	%人工討論6*100?
@@ -315,7 +323,7 @@
 	此處的結果為模型輸出和範例測試資料比較的結果，但需要注意的是，部份範例測試資料旨在評估開放性問答，即可能有多種回答方式的問題，故不應該以此判斷模型成效。
 	\begin{table}[H]
 		\centering
-		\caption{表x、模型自我測試結果}
+		\caption{表x、ChatGLM1模型自我測試結果}
 		\begin{tabular}{lllll}
 			     & BLEU-4 & ROUGE-1 & ROUGE-2 & ROUGE-L \\
 			500  & 3.5707 & 18.972  & 4.1165  & 14.8251 \\
@@ -327,15 +335,25 @@
 		\end{tabular}
 	\end{table}
 	\subsection{二、TruthfulQA（開放式問答）}
-	\subsection{三、MMLU（封閉性單一選擇問答）}
-	\subsection{四、CT 自我意識測驗}
-	\subsection{五、圖靈測驗}
-	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
+	
+	\textbf{比較第一版模型}
+	\textbf{比較第二版模型}
+	\textbf{比較第三版模型}
+	\textbf{綜合比較}
+%	\subsection{三、MMLU（封閉性單一選擇問答）}
+	\subsection{三、CT 自我意識測驗}
+		\textbf{比較第一版模型}
+	\textbf{比較第二版模型}
+	\textbf{比較第三版模型}
+	\textbf{綜合比較}
+%	\subsection{五、圖靈測驗}
+%	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 
 	\section{伍、討論}
 
-	\subsection{一、不同檢查點與模型比對}
-	\subsection{二、和人類表現比對}
+	\subsection{一、不同檢查點比對}
+	\subsection{二、不同模型比對}
+%	\subsection{二、和人類表現比對}
 	\subsection{三、未來展望}
 	%	\begin{quote}
 	%		We can only see a short distance ahead, but we can see plenty there that needs to be done.	\newline--
@@ -345,7 +363,7 @@
 
 	\section{陸、結論}
 		\begin{enumerate}
-			\item 我們透過訓練三個不同版本的模型，
+			\item 我們透過訓練三個不同版本的模型，觀察到
 			\item 資訊正確性最高為：某模型，其BELU分數為：，足顯以改善立場偏頗、缺乏資訊的問題
 			\item 意識測試（CT）最高可達，其十分接近於人類真實的意識形態
 		\end{enumerate}
