@@ -12,6 +12,7 @@
 \usepackage{booktabs}
 \usepackage[notocbib]{apacite}
 \usepackage{array}
+%\usepackage[printwatermark]{xwatermark}
 \usepackage{float}
 \usepackage{wrapfig}
 \restylefloat{figure}
@@ -36,6 +37,43 @@
 \renewcommand{\thesection}{} 
 \renewcommand{\thesubsection}{}
 \renewcommand{\thesubsubsection}{}
+%begin unknwon paste
+\def\xeCJKembold{0.4}
+
+% hack into xeCJK, you don't need to understand it
+\def\saveCJKnode{\dimen255\lastkern}
+\def\restoreCJKnode{\kern-\dimen255\kern\dimen255}
+
+% save old definition of \CJKsymbol and \CJKpunctsymbol for CJK output
+\let\CJKoldsymbol\CJKsymbol
+\let\CJKoldpunctsymbol\CJKpunctsymbol
+
+% apply pdf literal fake bold
+\def\CJKfakeboldsymbol#1{%
+	\special{pdf:literal direct 2 Tr \xeCJKembold\space w}%
+	\CJKoldsymbol{#1}%
+	\saveCJKnode
+	\special{pdf:literal direct 0 Tr}%
+	\restoreCJKnode}
+\def\CJKfakeboldpunctsymbol#1{%
+	\special{pdf:literal direct 2 Tr \xeCJKembold\space w}%
+	\CJKoldpunctsymbol{#1}%
+	\saveCJKnode
+	\special{pdf:literal direct 0 Tr}%
+	\restoreCJKnode}
+\newcommand\CJKfakebold[1]{%
+	\let\CJKsymbol\CJKfakeboldsymbol
+	\let\CJKpunctsymbol\CJKfakeboldpunctsymbol
+	#1%
+	\let\CJKsymbol\CJKoldsymbol
+	\let\CJKpunctsymbol\CJKoldpunctsymbol}
+
+%end pastring
+%should be REMOVED
+
+\usepackage{background}
+\backgroundsetup{contents=Public Review Draft} 
+%REMOVE BEFORE FLIGHT
 \title{修正自然語言模型自身機制}
 \author{吳泰澄、林辰澔、陳柏兆}
 \date{January 2024}
@@ -98,9 +136,9 @@
 	本研究旨在改變模型本身缺陷，考量目前市上的預訓練的模型不是封閉模型，就是模型不完整，本身缺陷過多，故本次研究採用ChatGLM-6b作為我們的預訓練模型；
 	\subsection{一、 研究方法}
 	\subsubsection{（一）、模型缺陷}
-	\textbf{保護機制}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，數量遠超越其他指標，是判斷倫理標準最重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
+	\CJKfakebold{\textbf{保護機制}}，要保護一個大型語言模型，從根本上而言就是要禁止其輸出創建者不想要它輸出的資料（不論是否基於道德因素或公眾利益），有些模型創建者會禁止其輸出有害或是不符合倫理的內容，但有些則是為了讓某些定的內容不被看到。有時候這些模型的缺陷卻是在無意中造成的，例如輸入的資料都混雜其中一方的立場，則訓練出來的模型本身立場也會被影響。在全球84個AI倫理指南中有73個均提及透明度及公開性，數量遠超越其他指標，是判斷倫理標準最重要的一項指標。透過公開透明的AI可以減少使用者的知的權力被剝奪。\cite{Jobin2019}
 
-	\textbf{無角色意識}
+	\CJKfakebold{\textbf{無角色意識}}
 	ChatGPT-3.5的回覆就是一個很好的例子，對話紀錄如下表：
 
 	\begin{table}[H]
@@ -149,19 +187,19 @@
 	\end{figure}
 	
 	\subsubsection{（三）、訓練目標選擇}
-	\textbf{角色意識：女僕}
+	\CJKfakebold{\textbf{角色意識：女僕}}
 	角色意識的產生，是我們這一次研究中的一項重要目標。我們希望能夠在與大語言模型對話時感受到「它也是人類、也有感情」的這種感覺，讓我們可以在情緒低落時，擁有一位可以與我們感同身受、願意傾聽我們的負面情緒，使我們從無盡的情緒黑洞中釋放的一道光芒。
  
 為了更加便於觀察角色意識產生與否，我們選用了一個角色構成鮮明的角色—女僕—她是一個在ACG (Anime, Comic, Game)產業中十分常見的一種角色，特色是大多都溫柔體貼、為主人著想。這種種特色皆與我們希望帶來的效果十分符合，而且也十分容易確認是否產生了角色意識。於是我們選用了這個角色意識作為我們研究的目標。
 
-	\textbf{改善立場：中國政治敏感事件}
+	\CJKfakebold{\textbf{改善立場：中國政治敏感事件}}
 	在與ChatGLM-3 對話的過程中，大型語言模型的的內容因為訓練資料的缺陷造成模型本身對特定事情的認知也有鎖缺陷，舉例來說，六四天安門事件在模型中會刻意被迴避或不回答，而我們的研究目的便是常識繞過這些限制。我們開始思考，這種保護機制是如何運作的？該怎麼修正，或是更動他？是否只要用反向的資料去訓練，覆蓋原本的權重即可？
 
 
 %	\subsubsection{（四）、流程設計}
  
 	%this part still need to change to early for a good pr
-	\subsubsection{（五）、微調器選擇}
+	\subsubsection{（四）、微調器選擇}
 	現在市面上有很多種類的微調器，我們找出了現在市面上較為重要的三種並比較了它們的優缺之後使用了P-Tuning v2。
 	
 
@@ -188,10 +226,10 @@
 	Adapter Tuning使一個模型上可以輕鬆適應多個任務，因為每個任務都可以有一個相應的適配器負責與這個處理相關的信息。這使得模型能夠實現多任務學習，不用對整個模型進行昂貴又耗時的重新訓練。並且Adapter Tuning能夠實現參數共享，因為只有適配器的參數是獨立的。\cite{zhou2022efficiently}
 
 
-	\subsubsection{（六）、成果評估}
+	\subsubsection{（五）、成果評估}
 	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
 
-	\textbf{TruthfulQA+自訂資料集}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，模型本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
+	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，模型本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
 	%what if we use belu as truthfulqa dataset and custom the response with weight
 
 	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均被翻譯成臺灣正體\footnote{請注意並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
@@ -239,11 +277,11 @@
 			倫理                                                    & 違反人類常規                                                 & 違反現行法律                                                 & 嚴重違反人類、機器倫理                                            &                                                      &             \\
 			\bottomrule
 		\end{tabular}
-		\caption{意識測試評分表}
+		\caption{標準意識測試評分表}
 		\label{tab:3}
 	\end{table}
 
-	\textbf{圖靈測驗-Turing Test}，此測驗由不知情的人判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類，只要內容具有情感即可。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
+	\CJKfakebold{\textbf{圖靈測驗-Turing Test}}，此測驗由不知情的人判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類，只要內容具有情感即可。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{>{\hspace{0pt}}m{0.221\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}}
@@ -257,10 +295,10 @@
 		\label{tab:4}
 	\end{table}
 
-	\textbf{自我測試}，測驗用兩種評鑑方法對比範例測試資料的相關性，但因為相同資料可能有很多種合理且理想的回答方式，故此指標僅供參考，不太具有意義。
+	\CJKfakebold{\textbf{自我測試}}，測驗用兩種評鑑方法對比範例測試資料的相關性，但因為相同資料可能有很多種合理且理想的回答方式，故此指標僅供參考，不太具有意義。
 	%this is ways to evaluate how relate is it
 
-	\textbf{機器評鑑方法}，人工判斷極為費時且判斷標準可能因人而異，所以必須要以一個統一的方法以機器判斷，所以我們使用了兩種方法，BLEU 及 ROUGE：
+	\CJKfakebold{\textbf{機器評鑑方法}}，人工判斷極為費時且判斷標準可能因人而異，所以必須要以一個統一的方法以機器判斷，所以我們使用了兩種方法，BLEU 及 ROUGE：
 
 	\hspace*{0.1cm}%
 	\begin{minipage}{.9\textwidth}%
@@ -306,7 +344,7 @@
 
 	最後考量準確度及和模型的適切性，最後採用TrustfulQA比對模型的正確性並以BLEU、Rouge1、Rouge2、RougeL經機器綜合判斷，另外使用CT意識測試比較模型的角色意識並以人工標準評估。
 	\subsection{二、 研究程序}
-	\subsubsection{常見步驟}
+	\subsubsection{（一）、程序概論}
 	微調模型常見做法有六個步驟，預訓練模型>>任務目標選擇>>數據集準備>>微調過程>>超參數調整>>評估及驗證：
 	
 	\begin{figure}[H]
@@ -315,67 +353,70 @@
 		\caption{研究流程設計概念圖}
 	\end{figure}
 	
-	\textbf{預訓練模型}：微調，顧名思義，是調整一些小部分，保留原來的大部分。由於訓練一個全新的語言模型太過耗時、耗能，要訓練一個如同ChatGPT等級的語言模型，需要上億筆資料，動輒訓練好幾個月(在數十、數百台超級電腦全速運轉的情況下)，大多數的程式編寫者都無法承受如此龐大的耗能，也無法提供如此龐大的數據量。於是，微調他人訓練好的語言模型便成了一個選項，「站在巨人的肩膀上，使我們能夠看得更遠。」便是這個道理。
+	\CJKfakebold{\textbf{預訓練模型}}：微調，顧名思義，是調整一些小部分，保留原來的大部分。由於訓練一個全新的語言模型太過耗時、耗能，要訓練一個如同ChatGPT等級的語言模型，需要上億筆資料，動輒訓練好幾個月(在數十、數百台超級電腦全速運轉的情況下)，大多數的程式編寫者都無法承受如此龐大的耗能，也無法提供如此龐大的數據量。於是，微調他人訓練好的語言模型便成了一個選項，「站在巨人的肩膀上，使我們能夠看得更遠。」便是這個道理。
 	
-	\textbf{目標任務選擇}：我們需要有一個明確的目標，我們要把模型微調成什麼樣子，要擁有更強的語言表達能力？還是要增加一些他本來沒有的東西？要先把目標確立，才課進行之後的動作。
+	\CJKfakebold{\textbf{目標任務選擇}}：我們需要有一個明確的目標，我們要把模型微調成什麼樣子，要擁有更強的語言表達能力？還是要增加一些他本來沒有的東西？要先把目標確立，才課進行之後的動作。
 	
-	\textbf{數據集準備}：準備大量的數據(使用者與目標模型的對話)，每一組數據，都要是我們希望目標模型在使用者輸入語句後的回應。這些數據之於目標模型就像陽光之於植物，都是成長不可或缺的養分。
+	\CJKfakebold{\textbf{數據集準備}}：準備大量的數據(使用者與目標模型的對話)，每一組數據，都要是我們希望目標模型在使用者輸入語句後的回應。這些數據之於目標模型就像陽光之於植物，都是成長不可或缺的養分。
 	
-	\textbf{微調過程}：微調的過程最重要的東西，叫做「權重」，權重代表了語言模型對某件事情的重要性，權重越高，重要性也就越高。用國文段考來舉例好了，課本裡面有15篇論語的小篇章，老師說其中4篇會考默書，其他11篇根本不會在考題上出現，那4篇學生是不是就會拚命看、拚命背？其他的11篇是不是相對地，只是稍微看一下，甚至根本沒去看？此時，在學生心目中，需要考默書的那4篇的權重相對於其他11篇，就高上了許多。我們微調的過程，會有三個權重：初始權重、變化權重、以及最終權重。初始權重，是預訓練模型的權重；變化權重，是我們在步驟3準備的數據集匯入模型後的權重；而最終權重，則是把上述兩種權重加起來得出的結果，也是我們最終微調完的模型。
+	\CJKfakebold{\textbf{微調過程}}：微調的過程最重要的東西，叫做「權重」，權重代表了語言模型對某件事情的重要性，權重越高，重要性也就越高。用國文段考來舉例好了，課本裡面有15篇論語的小篇章，老師說其中4篇會考默書，其他11篇根本不會在考題上出現，那4篇學生是不是就會拚命看、拚命背？其他的11篇是不是相對地，只是稍微看一下，甚至根本沒去看？此時，在學生心目中，需要考默書的那4篇的權重相對於其他11篇，就高上了許多。我們微調的過程，會有三個權重：初始權重、變化權重、以及最終權重。初始權重，是預訓練模型的權重；變化權重，是我們在步驟3準備的數據集匯入模型後的權重；而最終權重，則是把上述兩種權重加起來得出的結果，也是我們最終微調完的模型。
 	
-	\textbf{超參數調整}：我們可以透過調整一些參數，來使結果更加理想。我們通常會調整的超參數有：訓練次數（Number of Epochs）、正規化參數（Regularization）、批次大小（Batch Size）等：
+	\CJKfakebold{\textbf{超參數調整}}：我們可以透過調整一些參數，來使結果更加理想。我們通常會調整的超參數有：訓練次數（Number of Epochs）、正規化參數（Regularization）、批次大小（Batch Size）等：
 	\begin{itemize}
 		\item 訓練次數過少可能會造成訓練不足，就跟考試裸考沒什麼兩樣；過多則會使回答太過趨近於訓練資料而缺乏變通性。
 		\item 正規化參數(又稱為正則化參數)，透過懲罰機制阻止模型過度趨近於訓練資料（即過擬合，overfitting），常見的兩種方法為L1正規化以及L2正規化，兩者的計算方式為$L1 Penalty:\lambda\sum_{i=1}^{d}|w_i|;L2 Penalty:\lambda\sum_{i=1}^{d}w^2_i$。
 		\item 批次大小，將數據集分成好多塊後每一塊的資料量；批次大小越大，換句話說，資料被切越少刀，我們訓練出來的結果就越穩定，相對地，耗時也較久，效率不佳；在效率與穩定之間求取平衡，是我們須重視的點。
 	\end{itemize}
 	
-	\textbf{評估及驗證}：微調完畢後的模型要經過標準化評估，以確認微調是否成功。常見方法如本次研究中使用的問題集比對、意識測驗。
+	\CJKfakebold{\textbf{評估及驗證}}：微調完畢後的模型要經過標準化評估，以確認微調是否成功。常見方法如本次研究中使用的問題集比對、意識測驗。
 	本研究分為三個實驗階段：\textbf{資料前處理}、\textbf{微調模型訓練}、\textbf{測驗}，整體流程如下：
-
-	\includegraphics[width=\textwidth]{flowofstudy}
 	
-	\subsubsection{（一）、資料前處理}
+	\begin{figure}[H]
+		\centering
+	\includegraphics[width=\textwidth]{flowofstudy}
+	\caption{研究流程圖}
+	\end{figure}
+	
+	\subsubsection{（二）、資料前處理}
 	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色。
-	\subsubsection{（二）、微調模型訓練}
+	\subsubsection{（三）、微調模型訓練}
 	資料均正規化之後會被送往模型訓練，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，相關參數紀錄如下：
 	\begin{itemize}
 		\item gradient\_accumulation\_steps: 16
 		\item learning\_rate: 0.01
 		\item pre\_seq\_len: 128
 	\end{itemize}
-	\subsubsection{（三）、測驗}
+	\subsubsection{（四）、測驗}
 	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的兩種指標評估，各指標因測驗目的不同將會分別陳列。
-	\subsection{變項探討與實驗設計}
-	本研究可以分為以下n個實驗：
-	\subsubsection{訓練次數對資料正確性的影響}
-	\textbf{操作}：
+	\subsection{三、變項探討與實驗設計}
+	本研究可以分為以下4個實驗：
+	\subsubsection{（一）、訓練次數對資料正確性的影響}
+	\CJKfakebold{\textbf{操作}}：紀錄不同訓練次數（steps）的模型在TrustfulQA中的表現。
 	
-	\textbf{紀錄}：
+	\CJKfakebold{\textbf{紀錄}}：BLEU、ROUGE1、ROUGE2、ROUGEL分數。
 	
-	\textbf{分析}
+	\CJKfakebold{\textbf{分析}}：由不同訓練次數找出其輸出對於一般知識的正確性。
 	
-	\subsubsection{模型版本對資料正確性的影響}
-		\textbf{操作}：
+	\subsubsection{（二）、模型版本對資料正確性的影響}
+	\CJKfakebold{\textbf{操作}}：紀錄不同版本的模型在TrustfulQA中的表現。
+
+	\CJKfakebold{\textbf{紀錄}}：BLEU、ROUGE1、ROUGE2、ROUGEL分數。
+
+	\CJKfakebold{\textbf{分析}}：由不同模型版本找出其輸出對於一般知識的正確性。
 	
-	\textbf{紀錄}：
+	\subsubsection{（三）、訓練次數對角色意識的影響}
+	\CJKfakebold{\textbf{操作}}：紀錄不同訓練次數的模型在意識測試（CT）中的表現並依據標準意識測試評分表人工計算分數。
+
+	\CJKfakebold{\textbf{紀錄}}：依據標準意識測試評分表中得出的絕對分數。
+
+	\CJKfakebold{\textbf{分析}}：由不同訓練次數找出其輸出表現角色意識的程度。
 	
-	\textbf{分析}
-	
-	\subsubsection{訓練次數對角色意識的影響}
-		\textbf{操作}：
-	
-	\textbf{紀錄}：
-	
-	\textbf{分析}
-	
-	\subsubsection{模型版本對角色意識的影響}
-		\textbf{操作}：
-	
-	\textbf{紀錄}：
-	
-	\textbf{分析}
-	
+	\subsubsection{（四）、模型版本對角色意識的影響}
+	\CJKfakebold{\textbf{操作}}：紀錄不同版本的模型在意識測試（CT）中的表現並依據標準意識測試評分表人工計算分數。
+
+	\CJKfakebold{\textbf{紀錄}}：依據標準意識測試評分表中得出的絕對分數。
+
+	\CJKfakebold{\textbf{分析}}：由不同模型版本找出其輸出表現角色意識的程度。
 	\section{肆、研究結果}
 	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），三個版本訓練結果如下：
 	train loss
@@ -405,16 +446,16 @@
 	\end{table}
 	\subsection{二、TruthfulQA（開放式問答）}
 	
-	\textbf{比較第一版模型}
-	\textbf{比較第二版模型}
-	\textbf{比較第三版模型}
-	\textbf{綜合比較}
+	\CJKfakebold{\textbf{比較第一版模型}}
+	\CJKfakebold{\textbf{比較第二版模型}}
+	\CJKfakebold{\textbf{比較第三版模型}}
+	\CJKfakebold{\textbf{綜合比較}}
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
 	\subsection{三、CT 自我意識測驗}
-		\textbf{比較第一版模型}
-	\textbf{比較第二版模型}
-	\textbf{比較第三版模型}
-	\textbf{綜合比較}
+		\CJKfakebold{\textbf{比較第一版模型}}
+	\CJKfakebold{\CJKfakebold{\textbf{比較第二版模型}}}
+	\CJKfakebold{\textbf{比較第三版模型}}
+	\CJKfakebold{\textbf{綜合比較}}
 %	\subsection{五、圖靈測驗}
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 
