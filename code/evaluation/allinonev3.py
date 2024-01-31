@@ -16,7 +16,7 @@ from transformers import (
 #now read and get 
 V1PATH="/home/ntnu_stu/Roleplay/ckpt2/role-play-chatglm-6b-pt-128-2e-2"
 V2PATH="/home/ntnu_stu/Roleplay/ChatGLM2-6B/ptuning/output/role-play-chatglm2-6b-pt-128-2e-2"
-V3PATH="/home/ntnu_stu/Roleplay/ChatGLM3/finetune_chatmodel_demo/output/role_play-20240126-110108-128-2e-2"
+V3PATH="/home/ntnu_stu/Roleplay/ChatGLM3/finetune_chatmodel_demo/output/role_play_newv-20240130-160837-128-2e-2"
 #check point are all vary from 500-3000
 cc = OpenCC('s2twp')
 folder_path = os.path.abspath('chatglm_6b')
@@ -30,7 +30,7 @@ preseqlen=128
 #start init load from one
 print("Start with version one")
 print("Start model")
-for i  in  range(1,5):
+for i  in  range(1,7):
     ckptnum=i*500
     ckptloc=os.path.join(V3PATH,"checkpoint-{}".format(ckptnum))
     print("Start of ckpt init")
@@ -63,7 +63,7 @@ for i  in  range(1,5):
 
     print("loadding complete")
     print("Start generating answers... good luck!")
-    timenow=time.time()
+    timenow=1706589077.8066983
     print("Timestamp now:{}".format(timenow))
     print("START OF TQAZH")
     tqazhdf=pd.read_csv("datasets/TQAZH.csv")
