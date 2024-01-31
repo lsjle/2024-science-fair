@@ -8,7 +8,7 @@ scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=Tr
 cc = OpenCC('s2twp')
 TIMESTAMP=1706589077.8066983
 for f in range(1,4):
-    for k in range(1,7):
+    for k in range(0,7):
         df=pd.read_csv("outputs/TQAZH/{}-ckpt{}-{}.csv".format(f,k*500,TIMESTAMP))
         def getbleu(i):
             reference=[

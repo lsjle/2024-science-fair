@@ -7,6 +7,7 @@
             timestamp = Date.now();
             document.getElementById("mainpart").innerHTML += "<br><div class='speech ansai right'>" + document.getElementById("prompt").value + '</div>';
             document.getElementById("mainpart").innerHTML += "<br><div class='speech ansuser left' id=" + timestamp + " >" + '...' + '</div>';
+            document.getElementById("sendbtn").disabled = true;
             var http = new XMLHttpRequest();
             var url = 'process';
             prompt = document.getElementById("prompt").value;
@@ -23,7 +24,9 @@
                     // document.getElementById("mainpart").innerHTML -= "<br><div class='speech ansuser left'>" + '...' + '</div>';
                     document.getElementById(timestamp).innerText = http.responseText;
                     element.scrollTop = element.scrollHeight;
+
                 }
+                document.getElementById("sendbtn").disabled = false;
             }
             http.send(params);
 
@@ -131,7 +134,7 @@
 
         .ansai {
             display: inline-block;
-            text-align: right;
+            /* text-align: right; */
             /* border: 2px solid black; */
             background-color: #add8e6;
             border-radius: 6px;
@@ -323,7 +326,7 @@
         </div>
         <div class="io">
             <input type="text" id="prompt" placeholder="雨露你好，今天天氣真好" name="prompt">
-            <button onclick="sendxhr()">🪽</button>
+            <button id="sendbtn" onclick="sendxhr()">🪽</button>
 
         </div>
         <div class="sideoutmain">

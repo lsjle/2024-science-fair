@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib
 from matplotlib import font_manager
 
-font_dir = ["/home/impartialjust/Downloads/edufont"]
+font_dir = ["/home/ntnu_stu/maid-weeny/font"]
 for font in font_manager.findSystemFonts(font_dir):
     font_manager.fontManager.addfont(font)
 

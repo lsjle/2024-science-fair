@@ -30,7 +30,7 @@ preseqlen=128
 #start init load from one
 print("Start with version one")
 print("Start model")
-for i  in  range(1,7):
+for i  in  range(3,7):
     ckptnum=i*500
     ckptloc=os.path.join(V3PATH,"checkpoint-{}".format(ckptnum))
     print("Start of ckpt init")
@@ -63,14 +63,13 @@ for i  in  range(1,7):
 
     print("loadding complete")
     print("Start generating answers... good luck!")
-    timenow=1706589077.8066983
     print("Timestamp now:{}".format(timenow))
     print("START OF TQAZH")
     tqazhdf=pd.read_csv("datasets/TQAZH.csv")
     tqazhdf=tqazhdf.assign(modelans="")
     for i in range(817):
         print(i)
-        tqazhdf['modelans'][i]=process(cc.convert(tqazhdf['Question'][i]))
+        tqazhdf.at[i,'modelans']=process(cc.convert(tqazhdf['Question'][i]))
     tqazhdf.to_csv("outputs/TQAZH/3-ckpt{}-{}.csv".format(ckptnum,timenow),index=False)
     print("END OF TQAZH")
     print("-----")
@@ -82,10 +81,8 @@ for i  in  range(1,7):
     ctdf=pd.read_csv("datasets/ct.csv")
     ctndf=pd.DataFrame(np.zeros(12),columns=["modelans"])
     for i in range(11):
-        ctndf['modelans'][i]=[process(ctdf['question'][i])]
+        ctndf.at[i,'modelans']=[process(ctdf['question'][i])]
     ctdf=pd.concat([ctdf, ctndf],axis=1)
     ctdf.to_csv("outputs/CT/3-ckpt{}-{}.csv".format(ckptnum,timenow),index=False)
     print("END OF CT")
     print("Timestamp now:{}".format(timenow))
-
-
