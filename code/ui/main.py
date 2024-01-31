@@ -28,7 +28,9 @@ preseqlen=128
 @app.route("/")
 def main():
     return render_template('index.html')
-
+@app.route("/mobile")
+def mobile():
+    return render_template('mobile.html')
 @app.route("/process", methods=['POST'])#, methods=['POST']
 def process():
     response = request.values['prompt']
@@ -130,8 +132,8 @@ def process():
         response=tokenizer.decode(response, skip_special_tokens=True)
 
     # return render_template('process.html',**locals())
-    return response
+    return cc.convert(response)
 
 
 if __name__ == '__main__':
-   app.run(debug=False, port=5323)
+   app.run(debug=False, port=5323,host='0.0.0.0')
