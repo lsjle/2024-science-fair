@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function sendxhr() {
+            var http = new XMLHttpRequest();
+            var url = 'process';
+            prompt = document.getElementById("prompt").value;
+            modelnum = document.querySelector('input[name="model"]:checked').value;
+            var params = 'prompt=' + prompt + '&model=' + modelnum;
+            http.open('POST', url, true);
+
+            //Send the proper header information along with the request
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            http.onreadystatechange = function () {//Call a function when the state changes.
+                if (http.readyState == 4 && http.status == 200) {
+                    alert(http.responseText);
+                    document.getElementById("io").innerHTML += "\n" + http.responseText;
+                    element.scrollTop = element.scrollHeight;
+                }
+            }
+            http.send(params);
+
+        }
+        function trigdown() {
+            if (document.getElementById("myDropdown").style.display == 'block') {
+                document.getElementById("myDropdown").style.display = 'none';
+            } else {
+                document.getElementById("myDropdown").style.display = 'block';
+            }
+        }
+
+        function sctb(){
+        var element = document.querySelector('#mainpart');
+        element.scrollTop = element.scrollHeight;
+        }
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+        }
+
+        .mainitem {
+            max-width: 600px;
+            margin: auto;
+            border: 2px solid black;
+            background-color: #e6e6fa;
+        }
+
+        .io input {
+            /* width: 90%; */
+            height: 30px;
+            width: 70%;
+        }
+
+        .io button {
+            width: 28%;
+            border-radius: 0px;
+        }
+
+        .io {
+            margin: auto;
+            position: fixed;
+            height: 30px;
+            width: calc(min(100%, 600px) - 4px);
+            display: flex;
+            margin-left: 2px;
+            margin-right: 2px;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            top: calc(100vh - 30px);
+            background-color: #386d9e;
+            justify-content: space-between;
+
+        }
+
+        .mainpart {
+            border: 2px solid black;
+            /* height: 100vh; */
+            overflow: auto;
+            overflow-y: auto;
+            padding: 10px;
+            /* height:90vh; */
+        }
+
+        .header {
+            background-color: #386d9e;
+            color: white;
+            height: min(10vh, 40px);
+            position: fixed;
+            /* Set the navbar to fixed position */
+            top: 0;
+            /* Position the navbar at the top of the page */
+            width: calc(min(100%, 600px) - 4px);
+            /* Full width */
+            margin-left: 2px;
+            margin-right: 2px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .name {
+            line-height: 1.5;
+            font-size: 22px;
+        }
+
+        .ansuser {
+            display: inline-block;
+            /* border: 2px solid black; */
+            background-color: #ffc0cb;
+            border-radius: 6px;
+            margin: 5px;
+            margin-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /* clear: both; */
+        }
+
+        .ansai {
+            display: inline-block;
+            text-align: right;
+            /* border: 2px solid black; */
+            background-color: #add8e6;
+            border-radius: 6px;
+            margin: 5px;
+            margin-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /* clear: both; */
+            float: right;
+        }
+
+        .headerbtn button {
+            background-color: #e6e6fa;
+            height: 100%;
+            width: 30px;
+
+        }
+
+        /* (D) POSITION THE CALLOUT */
+        .speech {
+            /* position: relative; */
+            margin: 30px;
+        }
+
+        .speech::after {
+            /* position: absolute; */
+        }
+
+        .speech.up::after {
+            top: -15px;
+            left: calc(50% - 15px);
+        }
+
+        .speech.down::after {
+            bottom: -15px;
+            left: calc(50% - 15px);
+        }
+
+        .speech.left::after {
+            left: -10px;
+            top: min(15px, calc(50% - 15px));
+        }
+
+        .speech.right::after {
+            right: -10px;
+            top: min(15px, calc(50% - 15px));
+        }
+
+        /* (B) USE ::AFTER TO CREATE THE "CALLOUT" */
+        .speech::after {
+            display: block;
+            width: 0;
+            content: "";
+            border: 15px solid transparent;
+        }
+
+        /* (C) "CALLOUT" DIRECTIONS */
+        .speech.up::after {
+            border-bottom-color: #a53d38;
+            border-top: 0;
+        }
+
+        .speech.down::after {
+            border-top-color: #a53d38;
+            border-bottom: 0;
+        }
+
+        .speech.left::after {
+            border-right-color: #ffc0cb;
+            border-left: 0;
+        }
+
+        .speech.right::after {
+            border-left-color: #add8e6;
+            border-right: 0;
+        }
+
+        #myDropdown {
+            display: block;
+            position: fixed;
+            /* Set the navbar to fixed position */
+            top: min(10vh, 40px);
+            /* Position the navbar at the top of the page */
+            width: calc(min(100%, 600px) - 4px);
+            /* Full width */
+            margin-left: 2px;
+            margin-right: 2px;
+            color: white;
+            background-color: #386d9e;
+        }
+        .sideoutmain{
+            height: 100%;
+        }
+    </style>
+</head>
+
+
+<body onclick="sctb()">
+    <div class="mainitem">
+        <div class="header">
+            <span class="icon"><img src="../img/maidalphaicon.png" width="36px"></span>
+            <span class="name">雨露</span>
+            <span class="headerbtn"><button onclick="trigdown()">X</button></span>
+        </div>
+        <div id="myDropdown" class="dropdown-content">
+            <fieldset>
+                <legend>選擇模型</legend>
+                <div class="mainmodelselect">
+                    <div class="modelselect">
+                        <div class="inputitem">
+                            <input type="radio" id="15000" name="model" value="15000">
+                            <label for="15000">ChatGLM Checkpoint-500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="11000" name="model" value="11000">
+                            <label for="11000">ChatGLM Checkpoint-1000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="11500" name="model" value="11500">
+                            <label for="11500">ChatGLM Checkpoint-1500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="12000" name="model" value="12000">
+                            <label for="12000">ChatGLM Checkpoint-2000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="12500" name="model" value="12500">
+                            <label for="12500">ChatGLM Checkpoint-2500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="13000" name="model" value="13000">
+                            <label for="13000">ChatGLM Checkpoint-3000</label>
+                        </div>
+                    </div>
+                    <div class="modelselect">
+                        <div class="inputitem">
+
+                            <input type="radio" id="25000" name="model" value="25000">
+                            <label for="25000">ChatGLM2 Checkpoint-500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="21000" name="model" value="21000">
+                            <label for="21000">ChatGLM2 Checkpoint-1000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="21500" name="model" value="21500">
+                            <label for="21500">ChatGLM2 Checkpoint-1500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="22000" name="model" value="22000">
+                            <label for="22000">ChatGLM2 Checkpoint-2000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="22500" name="model" value="22500">
+                            <label for="22500">ChatGLM2 Checkpoint-2500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="23000" name="model" value="23000">
+
+                            <label for="23000">ChatGLM2 Checkpoint-3000</label>
+                        </div>
+                    </div>
+                    <div class="modelselect">
+                        <div class="inputitem">
+
+                            <input type="radio" id="35000" name="model" value="35000">
+                            <label for="35000">ChatGLM3 Checkpoint-500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="31000" name="model" value="31000">
+                            <label for="31000">ChatGLM3 Checkpoint-1000</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="31500" name="model" value="31500">
+                            <label for="31500">ChatGLM3 Checkpoint-1500</label>
+                        </div>
+                        <div class="inputitem">
+                            <input type="radio" id="32000" name="model" value="32000" checked>
+
+                            <label for="32000">ChatGLM3 Checkpoint-2000</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="io">
+            <input type="text" id="prompt" placeholder="雨露你好，今天天氣真好" name="prompt">
+            <button onclick="sendxhr()">🪽</button>
+
+        </div>
+        <div class="sideoutmain">
+        <div class="mainpart" id="mainpart">
+            <span class="speech ansuser left">data</span>
+            <br>
+            <span class="speech ansai right">hi</span>
+            <br>
+            <div class="speech ansuser left">
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id nulla mauris. Nunc lobortis orci
+                tincidunt mauris vulputate congue. Sed ut pharetra lacus, ac maximus lorem. Sed sollicitudin ornare
+                viverra. Praesent ipsum tellus, volutpat eget nulla ac, fermentum maximus dui. Ut ante metus,
+                sollicitudin aliquet magna aliquet, pellentesque pellentesque lorem. Etiam varius rhoncus eleifend.
+                Integer ullamcorper, lorem sit amet volutpat finibus, quam mauris vestibulum quam, nec finibus massa
+                neque at nunc.
+
+                Maecenas venenatis condimentum tortor. Fusce aliquet quam malesuada magna varius gravida. Morbi sed orci
+                risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In
+                nec luctus nunc, vitae luctus magna. Donec porta orci eget sagittis pharetra. Aliquam quis pulvinar
+                nunc. Fusce a orci venenatis, tincidunt libero eu, ullamcorper augue. Aliquam erat volutpat. Ut leo
+                justo, porta porta iaculis id, facilisis at elit.
+
+                Suspendisse nunc metus, sollicitudin quis dolor in, tristique varius sapien. Morbi dictum pellentesque
+                cursus. Nam mi nibh, ultricies sed metus sed, ultrices aliquet turpis. Aenean pellentesque massa enim,
+                ut euismod leo elementum in. Curabitur consectetur, dui et pharetra facilisis, erat augue mollis eros,
+                sed lobortis elit libero aliquet justo. In consequat mauris ut justo accumsan, eget eleifend erat
+                tempus. Sed eu sem at magna facilisis efficitur sit amet et massa. Vivamus sed augue dolor. Suspendisse
+                quam lectus, dignissim et massa nec, egestas rhoncus eros.
+
+                Nunc tortor ligula, tristique ut sollicitudin et, efficitur et lorem. Proin dignissim tortor ac nunc
+                pellentesque elementum. Etiam vehicula augue lacus, eget pretium orci efficitur vulputate. Aliquam massa
+                erat, mollis vel dignissim quis, pretium at libero. Maecenas ut hendrerit lacus, eu volutpat tellus.
+                Quisque quis lacus vitae arcu accumsan venenatis in nec nisl. Mauris vel magna orci. In hac habitasse
+                platea dictumst. Integer tincidunt nulla odio, at euismod libero aliquam sit amet. Aenean nec mollis
+                ipsum. Nam efficitur lacus egestas, placerat nunc eu, vestibulum diam. Donec ac pellentesque tellus,
+                quis volutpat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer vitae justo
+                sodales, aliquam lorem sed, luctus elit.
+
+                Integer eget massa magna. Duis aliquet vitae lorem sed commodo. Nulla facilisi. Pellentesque sed quam
+                enim. Sed consectetur sit amet erat ut aliquam. Proin non hendrerit augue. Fusce tempor consequat
+                tristique. </div>
+            <br>
+            <div class="speech ansai right">This is a very long response from the artificial intellinge server i know
+                there are some typo but i dont care about it at all so just ignore my typo and grammar also the
+                upper/lower case prob this line is just for testing so f it</div>
+
+
+        </div>
+        </div>
+
+    </div>
+
+</body>
