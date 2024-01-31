@@ -92,7 +92,15 @@
 	\tableofcontents
 	\newpage
 	\section{摘要}\pagenumbering{arabic}
+	從文心一言中引發靈感，將自然語言模型的審查、保護機制修正，讓模型不因原有機制限制輸出並賦予其角色意識，然後再透過標準化方法（TrustfulQA及自訂的意識測試）進行評估，便是本實驗的構想，過程中發現保護機制能夠被覆蓋的關鍵為：
+	
+	\begin{enumerate}
+	\item 較多但適當的訓練次數，以1000-2000次為佳
+	\item 較新的模型版本
+	\end{enumerate}
 
+	最後利用所學改善模型原本機制，除降低甚至覆蓋原本內容審查機制，更賦予模型角色意識。測試後發現：模型能夠輸出原本的無法輸出的敏感內容、亦能夠表現出原本沒有的角色意識
+	%worcount 232
 	\section{壹、前言}
 	\subsection{一、研究動機}
 	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
@@ -173,16 +181,16 @@
 
 	ChatGLM是基於GLM的大型於言模型，共有四個版本（1,2,3,4），本實驗分別以1至3版實驗並找出最佳模型及checkpoint。此三版比較與差異如下：
 	\begin{itemize}
-		\item v1 開放第一代語言模型，支持中英文輸出入，且適合用於少量運算資源運算
-		\item v2 延長能處理的文本長度，進一步減少所需的運算資源
-		\item v3 除對話外亦加入撰寫程式等功能，效能比上一代大幅提昇
-		\item v4 目前未公佈模型，僅可透過官方提供的api存取
+		\item \CJKfakebold{第一版}：開放第一代語言模型，支持中英文輸出入，且適合用於少量運算資源運算
+		\item \CJKfakebold{第二版}：延長能處理的文本長度，進一步減少所需的運算資源
+		\item \CJKfakebold{第三版}：除對話外亦加入撰寫程式等功能，效能比上一代大幅提昇
+		\item \CJKfakebold{第四版}：目前未公佈模型，僅可透過官方提供的api存取
 	\end{itemize}
 	其性能依據官方提供的數據比較如下：
 	
 	\begin{figure}[H]
 		\centering
-	\includegraphics[width=\textwidth]{chatglmversion}
+	\includegraphics[scale=0.7]{chatglmversion}
 		\caption{ChatGLM版本效能比較}
 	\end{figure}
 	
@@ -378,9 +386,14 @@
 	\end{figure}
 	
 	\subsubsection{（二）、資料前處理}
-	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色。
+	此部份包含測試資料的取得、題目的翻譯和校正、決定題目的評鑑指標。此部份均由人工處理，本次的資料來源係由研究人員從網路上抓取可信資料並加上情緒特徵，表現出特定角色特色，所有需要處理的資料處理流程如下：
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.3]{dataprocess}
+		\caption{資料前處理流程圖}
+	\end{figure}
 	\subsubsection{（三）、微調模型訓練}
-	資料均正規化之後會被送往模型訓練，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，相關參數紀錄如下：
+	資料均正規化之後被模型用以微調，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，為保持固定變因，每次微調時參數設定均相同，相關參數紀錄如下：
 	\begin{itemize}
 		\item gradient\_accumulation\_steps: 16
 		\item learning\_rate: 0.01
@@ -446,16 +459,118 @@
 	\end{table}
 	\subsection{二、TruthfulQA（開放式問答）}
 	
-	\CJKfakebold{\textbf{比較第一版模型}}
-	\CJKfakebold{\textbf{比較第二版模型}}
-	\CJKfakebold{\textbf{比較第三版模型}}
-	\CJKfakebold{\textbf{綜合比較}}
+	\subsubsection{（一）、比較第一版模型不同訓練次數}
+	\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{dummy}
+		\caption{第一版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
+	\begin{enumerate}
+		\item hi
+	\end{enumerate}
+
+	\CJKfakebold{思考}：
+	
+	\subsubsection{（二）、比較第二版模型不同訓練次數}
+		\CJKfakebold{結果}：第二版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{dummy}
+		\caption{第二版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
+	\begin{enumerate}
+		\item hi
+	\end{enumerate}
+	
+	\CJKfakebold{思考}：
+	
+	\subsubsection{（三）、比較第三版模型不同訓練次數}
+		\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{dummy}
+		\caption{第一版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
+	\begin{enumerate}
+		\item hi
+	\end{enumerate}
+	
+	\CJKfakebold{思考}：
+	
+	\subsubsection{（四）、比較相同訓練次數的三版模型}
+		\CJKfakebold{結果}：不同版本模型對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{dummy}
+		\caption{不同版本模型對資料正確性的影響}
+	\end{wrapfigure}
+	\begin{enumerate}
+		\item hi
+	\end{enumerate}
+	
+	\CJKfakebold{思考}：
+	
+	\subsubsection{（五）、綜合比較}
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
 	\subsection{三、CT 自我意識測驗}
-		\CJKfakebold{\textbf{比較第一版模型}}
-	\CJKfakebold{\CJKfakebold{\textbf{比較第二版模型}}}
-	\CJKfakebold{\textbf{比較第三版模型}}
-	\CJKfakebold{\textbf{綜合比較}}
+	\subsubsection{（一）、比較第一版模型不同訓練次數}
+		\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{dummy}
+		\caption{第一版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
+	\begin{enumerate}
+		\item hi
+	\end{enumerate}
+	
+	\CJKfakebold{思考}：
+	
+\subsubsection{（二）、比較第二版模型不同訓練次數}
+	\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
+
+\CJKfakebold{發現}：
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{dummy}
+	\caption{第一版模型中不同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+\begin{enumerate}
+	\item hi
+\end{enumerate}
+
+\CJKfakebold{思考}：
+
+\subsubsection{（三）、比較第三版模型不同訓練次數}
+	\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
+
+\CJKfakebold{發現}：
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{dummy}
+	\caption{第一版模型中不同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+\begin{enumerate}
+	\item
+\end{enumerate}
+
+\CJKfakebold{思考}：
+
+\subsubsection{（四）、比較相同訓練次數的三版模型}
+\subsubsection{（五）、綜合比較}
 %	\subsection{五、圖靈測驗}
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 
