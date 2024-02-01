@@ -1,3 +1,4 @@
+#not yet done
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
@@ -16,7 +17,7 @@ dfc=pd.read_csv("ctscore.csv")
 
 plt.ylabel("分數(來源見研究方法)")
 plt.xlabel("版本及檢查點(1-500~3-3000)")
-plt.title("ChatGLM不同版本及檢查點TrustfulQA表現比較")
+plt.title("ChatGLM不同版本及檢查點CT表現比較")
 # plt.axis([0, 12,])
 
 #plot 1:
