@@ -237,7 +237,7 @@
 	\subsubsection{（五）、成果評估}
 	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
 
-	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，資料集本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
+	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，資料集本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），採用Rouge及BLEU兩種演算法，比對由資料集提供的標準正確答案及標準錯誤答案，並給予評分，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
 	%what if we use belu as truthfulqa dataset and custom the response with weight
 
 	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均被翻譯成臺灣正體\footnote{請注意並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
@@ -573,7 +573,7 @@
 	
 
 	\begin{enumerate}
-		\item 1500-2500的表現結果均不如預期
+		\item 1500、2000、2500檢查點的表現結果均不如預期
 		\item 表現均不如原始模型
 	\end{enumerate}
 
@@ -582,8 +582,7 @@
 	\includegraphics[width=0.3\textwidth]{2ctc}
 	\caption{第二版模型中不同訓練次數對意識表現的影響}
 \end{wrapfigure}
-v1 data size small fineetune cuz a bigger effect 
-	\CJKfakebold{思考}：有可能第二版
+	\CJKfakebold{思考}：有可能第二版的原始模型資料量較大，而微調資料量太少而導致表現不佳。
 	
 	\subsubsection{（三）、比較第三版模型不同訓練次數}
 	\CJKfakebold{結果}：第三版模型中不同訓練次數對意識表現的影響如下表所示：
@@ -593,9 +592,9 @@ v1 data size small fineetune cuz a bigger effect
 	
 
 	\begin{enumerate}
-		\item ChatGLM3知識的整體表現因微調而有顯著降低的現象
-		\item 1000檢查點之後知識表現明顯下降
-		\item Rouge1、Rouge2及RougeL分數均顯低於原始模型
+		\item ChatGLM3多數情感表現不如原始模型
+		\item 檢查點3000超越原始模型
+		\item 整體大致呈現隨訓練次數上升而有叫好的表現
 	\end{enumerate}
 
 \begin{wrapfigure}{r}{0.3\textwidth}
@@ -604,10 +603,10 @@ v1 data size small fineetune cuz a bigger effect
 	\caption{第三版模型中不同訓練次數對意識表現的影響}
 \end{wrapfigure}
 
-	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。
+	\CJKfakebold{思考}：模型確實有因為微調而表現出更多的角色意識和情感，且大致隨訓練次數增加而增加。
 	
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
-	\CJKfakebold{結果}：三版模型中相同訓練次數對資料正確性的影響如下表所示：
+	\CJKfakebold{結果}：三版模型中相同訓練次數對意識表現的影響如下表所示：
 	
 	\CJKfakebold{發現}：
 	
@@ -621,7 +620,7 @@ v1 data size small fineetune cuz a bigger effect
 \begin{wrapfigure}{r}{0.3\textwidth}
 	\centering
 	\includegraphics[width=0.3\textwidth]{v3}
-	\caption{三版模型中相同訓練次數對資料正確性的影響}
+	\caption{三版模型中相同訓練次數對意識表現的影響}
 \end{wrapfigure}
 
 	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。
@@ -635,6 +634,7 @@ v1 data size small fineetune cuz a bigger effect
 	\subsection{二、不同模型比對}
 	第一版模型訓練後表現較第三版模型好，可能是因為我們我們本次實驗所提供的資料集相對於模型原有的資料過少，而對原本模型造成混淆的現象，但因第一版的資料量較少所以較不容易造成混淆，而第三版中因為模型原有資料量過大所以導致我們混淆了原本的模型而使其表現較差。
 %	\subsection{二、和人類表現比對}
+%check two relation between knwoledge and ct do a simple linaer regression
 	\subsection{三、未來展望}
 	%	\begin{quote}
 	%		We can only see a short distance ahead, but we can see plenty there that needs to be done.	\newline--
@@ -643,6 +643,7 @@ v1 data size small fineetune cuz a bigger effect
 	本次研究時間較為緊湊，未能完成更多類型模型及微調器的比較和對照實驗，實屬可惜，且若可取得更多有關數據集可以更準確的評估訓練效果。本研究往後將進一步以採用其他模型及更多數據資料集進行研究。
 
 	\section{陸、結論}
+	本次實驗我們訓練ChatGLM的三個版本，並以意識測試（CT）及TrustfulQA作為測試標準，綜合比較了不同版本語言模型微調後的結果，並分析出以下結論：
 		\begin{enumerate}
 			\item 我們透過訓練三個不同版本的模型，觀察到第一版模型訓練後表現較第三版模型好
 			\item 資訊正確性最高為：ChatGLM2，檢查點1500模型，其BELU分數為：0.053，資料正確性損失較小，且可對特定審查內容提供正確答覆，足顯可改善立場偏頗、缺乏資訊的問題
