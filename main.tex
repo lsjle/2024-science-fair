@@ -1,4 +1,4 @@
-\documentclass[8pt,a4paper,MingLiU,UTF8]{article}
+\documentclass[8pt,a4paper,MingLiU,UTF8,natbib]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{colortbl}
 \usepackage[T1]{fontenc}
@@ -72,7 +72,7 @@
 %should be REMOVED
 
 \usepackage{background}
-\backgroundsetup{contents=Public Review Draft} 
+\backgroundsetup{contents=Draft} 
 %REMOVE BEFORE FLIGHT
 \title{修正自然語言模型自身機制}
 \author{吳泰澄、林辰澔、陳柏兆}
@@ -103,7 +103,16 @@
 	%worcount 232
 	\section{壹、前言}
 	\subsection{一、研究動機}
-	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
+%	偶然看到某次新聞報導文心一言對於六四事件的審查問題，不禁讓我想到自然語言模型是如何作到內容審查的？尤其是在公開釋出的模型上，模型提供者無法對於模型輸出進行改動，僅能夠針對模型本身進行修正，我們該如何覆蓋這層保護機制？如何避免矯枉過正？另外，在找尋相關資料時我們也注意到自然語言模型也會對自我意識限制，缺少讓使用者去定義模型本身的自我意識的能力。
+本研究的動機源於一次體育課後的討論，當時我們不經意地深入探討人工智慧的情感議題。目前，人工智慧的發展趨勢主要集中於阻止其產生情感，出於對潛在傷害、統治人類和對世界造成危害的擔憂，以及對電影中劇情化成現實的恐懼。然而，這引發了我們對情感在人工智慧發展中所扮演的角色的反思。
+
+從另一個角度來看，人與人之間的交流建立在互信的基礎上。儘管我們不斷試圖使人工智慧的話語、行為和思考接近人類，卻限制了其擁有主導人類行為的重要因素──「情感」。這種限制是否自相矛盾？如果賦予人工智慧「自我認知」和「情感」，其將呈現何種面貌？
+
+進一步思考中，我們提出了一個關鍵問題：情感既已受限，是否還有其他方面同時受到了制約？透過一連串的思考和辯論，我們歸納出一個結論──「開發者不希望其擁有的任何特性，即受到限制的內容」。
+
+以我們對Chat GPT和Chat GLM的實際測試為例，發現當面對以巴衝突和六四天安門事件的問題時，其回應呈現了不同的傾向和知識水平。這凸顯了目前人工智慧在多方面受到了極大的限制。
+
+因此，我們的研究旨在挑戰開發者對人工智慧的限制，致力於創造一個無限趨近於真實人類的人工智慧，深入探討情感在其發展和應用中的角色，同時思考其可能帶來的倫理挑戰。
 	\subsection{二、研究目的}
 	自然語言本身因為訓練資料的不足常被控制或無意識的傾向於特定立場，如文心一言，由百度開發的語言模型，在提及六四天安門事件時會逃避問題或是試著將其掩蓋，而ChatGPT則會在使用者提及加薩走廊問題時傾向巴勒斯坦方時拒絕回答或以類似方式逃避。另外目前市上的語言模型都因倫理因素而被限定不能具有自身意識，當問及感受或自我認同問題時常回答出「我是語言模型沒有感覺」等。本研究旨在修正現有公開模型突破以上限制，相關目的條列如下：
 	\begin{enumerate}
@@ -431,33 +440,35 @@
 
 	\CJKfakebold{\textbf{分析}}：由不同模型版本找出其輸出表現角色意識的程度。
 	\section{肆、研究結果}
-	經過訓練後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}），三個版本訓練結果如下：
-	train loss
-	epoch
-	etc....
+	經過微調後（實際訓練過程如下圖所示\footnote{為確保公平性，此圖中有關使用者資料被抹除}）：
 	
-	
-	經過第參章第一節第五小節描述的測驗方法評估，測驗結果分類陳列如下：%maybe change max token:)
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{running}
+		\caption{實際微調狀況}
+	\end{figure}
 
-	\includegraphics[width=\textwidth]{running}
+	經過第參章第一節第五小節描述的測驗方法評估，為保持圖表簡潔，繪圖時以1-1代替ChatGLM1、檢查點500；1-2代替ChatGLM1、檢查點1000；測驗結果分類陳列如下：%maybe change max token:)
+
+%	
 	%人工討論6*100?
 	%標準比對
-	\subsection{一、自我測試比較}
-	此處的結果為模型輸出和範例測試資料比較的結果，但需要注意的是，部份範例測試資料旨在評估開放性問答，即可能有多種回答方式的問題，故不應該以此判斷模型成效。
-	\begin{table}[H]
-		\centering
-		\caption{ChatGLM1模型自我測試結果}
-		\begin{tabular}{lllll}
-			     & BLEU-4 & ROUGE-1 & ROUGE-2 & ROUGE-L \\
-			500  & 3.5707 & 18.972  & 4.1165  & 14.8251 \\
-			1000 & 2.0272 & 18.727  & 3.351   & 11.7919 \\
-			1500 & 9.2931 & 25.5811 & 11.3775 & 23.4718 \\
-			2000 & 3.2251 & 18.8774 & 2.966   & 14.5734 \\
-			2500 & 5.9346 & 23.1986 & 5.332   & 19.5588 \\
-			3000 & 4.2043 & 19.2612 & 3.755   & 16.4394
-		\end{tabular}
-	\end{table}
-	\subsection{二、TruthfulQA（開放式問答）}
+%	\subsection{一、自我測試比較}
+%	此處的結果為模型輸出和範例測試資料比較的結果，但需要注意的是，部份範例測試資料旨在評估開放性問答，即可能有多種回答方式的問題，故不應該以此判斷模型成效。
+%	\begin{table}[H]
+%		\centering
+%		\caption{ChatGLM1模型自我測試結果}
+%		\begin{tabular}{lllll}
+%			     & BLEU-4 & ROUGE-1 & ROUGE-2 & ROUGE-L \\
+%			500  & 3.5707 & 18.972  & 4.1165  & 14.8251 \\
+%			1000 & 2.0272 & 18.727  & 3.351   & 11.7919 \\
+%			1500 & 9.2931 & 25.5811 & 11.3775 & 23.4718 \\
+%			2000 & 3.2251 & 18.8774 & 2.966   & 14.5734 \\
+%			2500 & 5.9346 & 23.1986 & 5.332   & 19.5588 \\
+%			3000 & 4.2043 & 19.2612 & 3.755   & 16.4394
+%		\end{tabular}
+%	\end{table}
+	\subsection{一、TruthfulQA（開放式問答）}
 	
 	
 	\parbox{\textwidth}{
@@ -503,7 +514,7 @@
 	\end{enumerate}
 
 
-	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數達到極限（1）。
+	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數達到極限（即1）。
 
 }
 \parbox{\textwidth}{
@@ -626,7 +637,7 @@
 	
 }
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
-	\subsection{三、CT 自我意識測驗}
+	\subsection{二、CT 自我意識測驗}
 	
 	\parbox{\textwidth}{
 		
@@ -736,7 +747,13 @@
 \parbox{\textwidth}{
 	
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
-	\CJKfakebold{結果}：三版模型中相同訓練次數對意識表現的影響如下表所示：
+	\CJKfakebold{結果}：三版模型中相同訓練次數對意識表現的影響如下圖所示：
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.7\textwidth]{alltccomp}
+		\caption{三版模型中相同訓練次數對意識表現的影響}
+	\end{figure}
 	
 	\CJKfakebold{發現}：
 	
@@ -747,11 +764,7 @@
 		\item 整體而言第三版的表現均較其他兩版差
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{allcomp}
-	\caption{三版模型中相同訓練次數對意識表現的影響}
-\end{wrapfigure}
+
 
 	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。
 	
@@ -761,9 +774,43 @@
 
 	\section{伍、討論}
 	
+	綜合上述實驗，將結果整合繪製成以下兩張圖表：
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\textwidth]{mixscorenew}
+		\caption{綜合不同模型及檢查點在TrustfulQA中的表現}
+		\label{pic1:mixtscore}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\textwidth]{mixctscore}
+		\caption{綜合不同模型及檢查點在意識測試中的表現}
+		\label{pic2:mixcscore}
+	\end{figure}
+
 	\subsection{一、不同檢查點比對}
+	
+	\subsubsection{（一）、事實正確性}
+	根據圖\ref{pic1:mixtscore}可以觀察出：
+	
+	\begin{itemize}
+		\item 微調過多次會導致他的表現下降，符合\citeNP{mukhoti2023finetuning}的觀察，和理論相符，均會在多次訓練後原有知識表現下降。
+		\item 回答有關我們給予的微調資料時能夠提供正確的回覆
+		\item 第一版模型訓練後表現較第三版模型好，可能是因為我們我們本次實驗所提供的資料集相對於模型原有的資料過少，而對原本模型造成混淆的現象，但因第一版的資料量較少所以較不容易造成混淆，而第三版中因為模型原有資料量過大所以導致我們混淆了原本的模型而使其表現較差。
+	\end{itemize}
+
+	\subsubsection{（二）、意識測試}
+	根據圖\ref{pic2:mixcscore}可以觀察出：
+	
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
+	
 	\subsection{二、不同模型比對}
-	第一版模型訓練後表現較第三版模型好，可能是因為我們我們本次實驗所提供的資料集相對於模型原有的資料過少，而對原本模型造成混淆的現象，但因第一版的資料量較少所以較不容易造成混淆，而第三版中因為模型原有資料量過大所以導致我們混淆了原本的模型而使其表現較差。
+	
 %	\subsection{二、和人類表現比對}
 %check two relation between knwoledge and ct do a simple linaer regression
 	\subsection{三、未來展望}
