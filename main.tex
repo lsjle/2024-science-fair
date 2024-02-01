@@ -573,8 +573,7 @@
 	
 
 	\begin{enumerate}
-		\item ChatGLM2知識的整體表現因微調而有略為減低
-		\item 1000及2500檢查點的表現特別低落
+		\item 1500-2500的表現結果均不如預期
 		\item 表現均不如原始模型
 	\end{enumerate}
 
@@ -631,9 +630,10 @@ v1 data size small fineetune cuz a bigger effect
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 
 	\section{伍、討論}
-
+	
 	\subsection{一、不同檢查點比對}
 	\subsection{二、不同模型比對}
+	第一版模型訓練後表現較第三版模型好，可能是因為我們我們本次實驗所提供的資料集相對於模型原有的資料過少，而對原本模型造成混淆的現象，但因第一版的資料量較少所以較不容易造成混淆，而第三版中因為模型原有資料量過大所以導致我們混淆了原本的模型而使其表現較差。
 %	\subsection{二、和人類表現比對}
 	\subsection{三、未來展望}
 	%	\begin{quote}
@@ -644,9 +644,9 @@ v1 data size small fineetune cuz a bigger effect
 
 	\section{陸、結論}
 		\begin{enumerate}
-			\item 我們透過訓練三個不同版本的模型，觀察到
-			\item 資訊正確性最高為：某模型，其BELU分數為：，足顯以改善立場偏頗、缺乏資訊的問題
-			\item 意識測試（CT）最高可達，其十分接近於人類真實的意識形態
+			\item 我們透過訓練三個不同版本的模型，觀察到第一版模型訓練後表現較第三版模型好
+			\item 資訊正確性最高為：ChatGLM2，檢查點1500模型，其BELU分數為：0.053，資料正確性損失較小，且可對特定審查內容提供正確答覆，足顯可改善立場偏頗、缺乏資訊的問題
+			\item 意識測試（CT）最高可達15分，其結果十分接近於人類真實的意識形態
 		\end{enumerate}
 	%https://reurl.cc/v0vaKa (L1, L2正規化)
 	%	\printbibliography

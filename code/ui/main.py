@@ -17,7 +17,7 @@ from transformers import (
 app = Flask(__name__,static_url_path='/img', static_folder='img')
 V1PATH="/home/ntnu_stu/Roleplay/ckpt2/role-play-chatglm-6b-pt-128-2e-2"
 V2PATH="/home/ntnu_stu/Roleplay/ChatGLM2-6B/ptuning/output/role-play-chatglm2-6b-pt-128-2e-2"
-V3PATH="/home/ntnu_stu/Roleplay/ChatGLM3/finetune_chatmodel_demo/output/role_play-20240126-110108-128-2e-2"
+V3PATH="/home/ntnu_stu/Roleplay/ChatGLM3/finetune_chatmodel_demo/output/role_play_newv1-20240131-152455-128-2e-2"
 cc = OpenCC('s2twp')
 folder_path = os.path.abspath('chatglm_6b')
 sys.path.append(folder_path)
@@ -36,6 +36,12 @@ def process():
     response = request.values['prompt']
     modelnum=int(request.values['model'])
     if(modelnum<20000):
+        if(modelnum==0):
+            tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm3-6b", trust_remote_code=True)
+            model = AutoModel.from_pretrained("THUDM/chatglm3-6b", trust_remote_code=True, device='cuda')
+            model = model.eval()
+            response, history = model.chat(tokenizer, "你好", history=[])
+            
         #this will be version one
         modelloc="THUDM/chatglm-6b"
         modelnum-=10000
@@ -112,7 +118,7 @@ def process():
         modelnum-=30000
         if(modelnum==5000):
             modelnum=500
-        ckptnum=modelnum
+        ckptnum=5000
         ckptloc=os.path.join(V3PATH,"checkpoint-{}".format(ckptnum))
         tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm3-6b", trust_remote_code=True)
         config = AutoConfig.from_pretrained("THUDM/chatglm3-6b", trust_remote_code=True, pre_seq_len=128)
@@ -136,4 +142,4 @@ def process():
 
 
 if __name__ == '__main__':
-   app.run(debug=False, port=5323,host='0.0.0.0')
+   app.run(debug=False, port=5324,host='0.0.0.0')
