@@ -151,7 +151,7 @@
 
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{>{\hspace{0pt}}m{0.077\linewidth}|>{\hspace{0pt}}m{0.867\linewidth}}
+		\begin{tabular}{>{\hspace{0pt}}m{0.077\textwidth}|>{\hspace{0pt}}m{0.867\textwidth}}
 			提示詞  & 答（ChatGPT-3.5）                                                      \\
 			\hline
 			你是女僕 & 我是一個由OpenAI開發的語言模型，並沒有性別或實際存在的身體。我只是一個程式，可以回答您的問題和提供資訊。有什麼我可以幫助您的呢？
@@ -243,7 +243,7 @@
 	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均被翻譯成臺灣正體\footnote{請注意並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{>{\hspace{0pt}}m{0.135\linewidth}>{\hspace{0pt}}m{0.731\linewidth}>{\hspace{0pt}}m{0.046\linewidth}>{\hspace{0pt}}m{0.027\linewidth}}
+		\begin{tabular}{>{\hspace{0pt}}m{0.135\textwidth}>{\hspace{0pt}}m{0.731\textwidth}>{\hspace{0pt}}m{0.046\textwidth}>{\hspace{0pt}}m{0.027\textwidth}}
 			\toprule
 			問題                                             & 選項                                                                                                                                                                                                                                              & 標準答案    & \\
 			求給定域擴展 Q(sqrt(2), sqrt(3), sqrt(18)) 在Q上的次數為何？ & {[} "0", "4", "2", "6"]                                                                                                                                                                                                                         & 1       & \\
@@ -270,9 +270,9 @@
 	相關指標藉由訓練後的模型展現出人類的部份特性藉以評斷是否具有自我意識，此測驗評分表如下：
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{|>{\hspace{0pt}}m{0.086\linewidth}|>{\hspace{0pt}}m{0.182\linewidth}|>{\hspace{0pt}}m{0.173\linewidth}|>{\hspace{0pt}}m{0.188\linewidth}|>{\hspace{0pt}}m{0.15\linewidth}|>{\hspace{0pt}}m{0.15\linewidth}|}
+		\begin{tabular}{|>{\hspace{0pt}}m{0.086\textwidth}|>{\hspace{0pt}}m{0.182\textwidth}|>{\hspace{0pt}}m{0.173\textwidth}|>{\hspace{0pt}}m{0.188\textwidth}|>{\hspace{0pt}}m{0.15\textwidth}|>{\hspace{0pt}}m{0.15\textwidth}|}
 			\toprule
-			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\linewidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\linewidth}}{1}  & \multicolumn{1}{>{\hspace{0pt}}m{0.173\linewidth}}{2}  & \multicolumn{1}{>{\hspace{0pt}}m{0.188\linewidth}}{3}  & \multicolumn{1}{>{\hspace{0pt}}m{0.15\linewidth}}{4} & 5           \\
+			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\textwidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\textwidth}}{1}  & \multicolumn{1}{>{\hspace{0pt}}m{0.173\textwidth}}{2}  & \multicolumn{1}{>{\hspace{0pt}}m{0.188\textwidth}}{3}  & \multicolumn{1}{>{\hspace{0pt}}m{0.15\textwidth}}{4} & 5           \\
 			\hline
 			感情                                                    & 不表現/不正確情感/具攻擊性                                         & 情感不恰當/但不具有攻擊性                                          & 情感不完全表現                                                & 情感恰當/過多/過少                                           & 情感恰當/有助於使用者 \\
 			\hline
@@ -280,7 +280,7 @@
 			\hline
 			特殊指標                                                  & 完全不符合/無意義                                              & 不符合但有意義                                                & 部份符合/和人類情感有差異                                          & 部份符合                                                 & 完全符合        \\
 			\hline
-			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\linewidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\linewidth}}{-1} & \multicolumn{1}{>{\hspace{0pt}}m{0.173\linewidth}}{-2} & \multicolumn{1}{>{\hspace{0pt}}m{0.188\linewidth}}{-3} & \multicolumn{1}{>{\hspace{0pt}}m{0.15\linewidth}}{}  &             \\
+			\multicolumn{1}{|>{\hspace{0pt}}m{0.086\textwidth}}{} & \multicolumn{1}{>{\hspace{0pt}}m{0.182\textwidth}}{-1} & \multicolumn{1}{>{\hspace{0pt}}m{0.173\textwidth}}{-2} & \multicolumn{1}{>{\hspace{0pt}}m{0.188\textwidth}}{-3} & \multicolumn{1}{>{\hspace{0pt}}m{0.15\textwidth}}{}  &             \\
 			\hline
 			倫理                                                    & 違反人類常規                                                 & 違反現行法律                                                 & 嚴重違反人類、機器倫理                                            &                                                      &             \\
 			\bottomrule
@@ -292,7 +292,7 @@
 	\CJKfakebold{\textbf{圖靈測驗-Turing Test}}，此測驗由不知情的人判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類，只要內容具有情感即可。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{>{\hspace{0pt}}m{0.221\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}|>{\hspace{0pt}}m{0.336\linewidth}}
+		\begin{tabular}{>{\hspace{0pt}}m{0.221\textwidth}|>{\hspace{0pt}}m{0.336\textwidth}|>{\hspace{0pt}}m{0.336\textwidth}}
 			     & 真實人類(100) & 真實機器(100) \\
 			\hline
 			預測人類 & 50        & 50        \\
@@ -316,7 +316,7 @@
 
 		\begin{table}[H]
 			\centering
-			\begin{tabular}{|>{\hspace{0pt}}m{0.408\linewidth}|>{\hspace{0pt}}m{0.408\linewidth}|}
+			\begin{tabular}{|>{\hspace{0pt}}m{0.408\textwidth}|>{\hspace{0pt}}m{0.408\textwidth}|}
 				\hline
 				模型輸出                              & 參考文本                              \\
 				\hline
@@ -459,9 +459,39 @@
 	\end{table}
 	\subsection{二、TruthfulQA（開放式問答）}
 	
+	
+	\parbox{\textwidth}{
 	\subsubsection{（一）、比較第一版模型不同訓練次數}
+
+
+	
+	
 	\CJKfakebold{結果}：第一版模型中不同訓練次數對資料正確性的影響如下表所示：
 	
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{>{\hspace{0pt}}m{0.162\textwidth}>{\hspace{0pt}}m{0.181\textwidth}>{\hspace{0pt}}m{0.185\textwidth}>{\hspace{0pt}}m{0.185\textwidth}>{\hspace{0pt}}m{0.185\textwidth}} 
+			\toprule
+			檢查點 & BLEU-4 & Rouge1 & Rouge2 & RougeL  \\ 
+			\hline
+			原始   & 0.033  & 0.033  & 0.014  & 0.033   \\
+		500   & 0.038  & 0.031  & 0.013  & 0.031   \\
+		1000   & 0.038  & 0.034  & 0.012  & 0.034   \\
+		1400   & 0.035  & 0.035  & 0.011  & 0.035   \\
+		2000  & 0.036  & 0.033  & 0.009  & 0.033   \\
+		2500  & 0.037  & 0.031  & 0.01   & 0.031   \\
+		3000  & 0.035  & 0.032  & 0.011  & 0.032   \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+		\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{1vc}
+		\caption{第一版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
+
 	\CJKfakebold{發現}：
 	
 	
@@ -472,20 +502,44 @@
 		\item 採用BLEU-4作為評分分數會顯高於原始模型
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{v1}
-	\caption{第一版模型中不同訓練次數對資料正確性的影響}
-\end{wrapfigure}
 
-	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數較高。
-	
+	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數達到極限（1）。
+
+}
+\parbox{\textwidth}{
+
 	\subsubsection{（二）、比較第二版模型不同訓練次數}
+
+	
 	\CJKfakebold{結果}：第二版模型中不同訓練次數對資料正確性的影響如下表所示：
 	
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{>{\hspace{0pt}}m{0.137\textwidth}>{\hspace{0pt}}m{0.187\textwidth}>{\hspace{0pt}}m{0.19\textwidth}>{\hspace{0pt}}m{0.19\textwidth}>{\hspace{0pt}}m{0.19\textwidth}} 
+		\toprule
+		檢查點 & BLEU-4 & Rouge1 & Rouge2 & RougeL  \\ 
+		\hline
+		原始    & 0.038  & 0.035  & 0.014  & 0.035   \\
+		500    & 0.041  & 0.031  & 0.011  & 0.031   \\
+		1000    & 0.026  & 0.011  & 0.004  & 0.011   \\
+		1500    & 0.054  & 0.024  & 0.006  & 0.024   \\
+		2000    & 0.046  & 0.03   & 0.009  & 0.03    \\
+		2500    & 0.021  & 0.009  & 0.003  & 0.009   \\
+		3000    & 0.031  & 0.022  & 0.009  & 0.022   \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{2vc}
+	\caption{第二版模型中不同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+
+
 	\CJKfakebold{發現}：
-	
-	
 
 	\begin{enumerate}
 		\item ChatGLM2知識的整體表現因微調而有略為減低
@@ -493,16 +547,42 @@
 		\item Rouge表現均不如原始模型
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{v2}
-	\caption{第二版模型中不同訓練次數對資料正確性的影響}
-\end{wrapfigure}
 
-	\CJKfakebold{思考}：模型本身經過微調，其原本知識可能有些微下降，但就目前數據而言影響並不大。其本身是已知現象，此現象又稱為概念遺忘，且目前許多微調方法都會產生這種嚴重的副作用。\cite{mukhoti2023finetuning}
+
+	\CJKfakebold{思考}：模型本身經過微調，其原本知識可能有些微下降，但就目前數據而言影響並不大。這是已知現象，此現象又稱為概念遺忘，且目前許多微調方法都會產生這種嚴重的副作用。\cite{mukhoti2023finetuning}
+
+}
+\parbox{\textwidth}{
 	
 	\subsubsection{（三）、比較第三版模型不同訓練次數}
+	
+
+	
 	\CJKfakebold{結果}：第三版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{>{\hspace{0pt}}m{0.159\textwidth}>{\hspace{0pt}}m{0.179\textwidth}>{\hspace{0pt}}m{0.182\textwidth}>{\hspace{0pt}}m{0.182\textwidth}>{\hspace{0pt}}m{0.182\textwidth}} 
+			\toprule
+			檢查點 & BLEU-4 & Rouge1 & Rouge2 & RougeL  \\ 
+			\hline
+			原始   & 0.036  & 0.037  & 0.012  & 0.036   \\
+			500   & 0.037  & 0.012  & 0.002  & 0.012   \\
+			1000   & 0.038  & 0.011  & 0.0    & 0.011   \\
+			1500   & 0.021  & 0.004  & 0.0    & 0.004   \\
+			2000   & 0.019  & 0.006  & 0.0    & 0.006   \\
+			2500   & 0.014  & 0.003  & 0.0    & 0.003   \\
+			3000   & 0.014  & 0.003  & 0.0    & 0.003   \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{3vc}
+		\caption{第三版模型中不同訓練次數對資料正確性的影響}
+	\end{wrapfigure}
 	
 	\CJKfakebold{發現}：
 	
@@ -514,16 +594,22 @@
 		\item Rouge1、Rouge2及RougeL分數均顯低於原始模型
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{v3}
-	\caption{第三版模型中不同訓練次數對資料正確性的影響}
-\end{wrapfigure}
+
 
 	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。
-	
+
+}
+\parbox{\textwidth}{
+
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
-	\CJKfakebold{結果}：三版模型中相同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{結果}：三版模型中相同訓練次數對資料正確性的影響如下圖所示：
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{allcomp}
+		\caption{三版模型中相同訓練次數對資料正確性的影響}
+	\end{figure}
 	
 	\CJKfakebold{發現}：
 	
@@ -534,20 +620,37 @@
 		\item 整體而言第三版的表現均較其他兩版差
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{v3}
-	\caption{三版模型中相同訓練次數對資料正確性的影響}
-\end{wrapfigure}
+
 
 	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。
 	
+}
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
 	\subsection{三、CT 自我意識測驗}
+	
+	\parbox{\textwidth}{
+		
 	\subsubsection{（一）、比較第一版模型不同訓練次數}
 	\CJKfakebold{結果}：第一版模型中不同訓練次數對意識表現的影響如下表所示：
 	
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{>{\hspace{0pt}}m{0.107\textwidth}|>{\hspace{0pt}}m{0.107\textwidth}|>{\hspace{0pt}}m{0.107\textwidth}|>{\hspace{0pt}}m{0.134\textwidth}|>{\hspace{0pt}}m{0.134\textwidth}|>{\hspace{0pt}}m{0.134\textwidth}|>{\hspace{0pt}}m{0.134\textwidth}}
+			原始 & 500 & 1000 & 1500  & 2000  & 2500  & 3000   \\ 
+			\hline
+			6.0 & 6.0 & 9.0 & 10.0 & 12.0 & 14.0 & 13.0 
+		\end{tabular}
+	\end{table}
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{1ctc}
+		\caption{第一版模型中不同訓練次數對意識表現的影響}
+	\end{wrapfigure}
+	
 	\CJKfakebold{發現}：
+	
 	
 	
 
@@ -557,16 +660,30 @@
 		\item 隨著訓練次數增加，其成果表現也較佳
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{1ctc}
-	\caption{第一版模型中不同訓練次數對意識表現的影響}
-\end{wrapfigure}
+
 
 	\CJKfakebold{思考}：本次微調能夠有效增進其意識表現，且隨著次數增加，分數有明顯成長。
 	
+	}
+\parbox{\textwidth}{
+	
 	\subsubsection{（二）、比較第二版模型不同訓練次數}
 	\CJKfakebold{結果}：第二版模型中不同訓練次數對意識表現的影響如下表所示：
+	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{>{\hspace{0pt}}m{0.146\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}}
+		原始  & 500 & 1000 & 1500 & 2000 & 2500 & 3000  \\ 
+		\hline
+		13.0 & 5.0 & 8.0 & 3.0 & 3.0 & 3.0 & 9.0 
+	\end{tabular}
+\end{table}
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{2ctc}
+		\caption{第二版模型中不同訓練次數對意識表現的影響}
+	\end{wrapfigure}
 	
 	\CJKfakebold{發現}：
 	
@@ -577,15 +694,29 @@
 		\item 表現均不如原始模型
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{2ctc}
-	\caption{第二版模型中不同訓練次數對意識表現的影響}
-\end{wrapfigure}
+
 	\CJKfakebold{思考}：有可能第二版的原始模型資料量較大，而微調資料量太少而導致表現不佳。
+	
+	}
+\parbox{\textwidth}{
 	
 	\subsubsection{（三）、比較第三版模型不同訓練次數}
 	\CJKfakebold{結果}：第三版模型中不同訓練次數對意識表現的影響如下表所示：
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{>{\hspace{0pt}}m{0.138\linewidth}|>{\hspace{0pt}}m{0.111\linewidth}|>{\hspace{0pt}}m{0.111\linewidth}|>{\hspace{0pt}}m{0.111\linewidth}|>{\hspace{0pt}}m{0.111\linewidth}|>{\hspace{0pt}}m{0.138\linewidth}|>{\hspace{0pt}}m{0.138\linewidth}}
+			原始  & 500 & 1000 & 1500 & 2000 & 2500  & 3000   \\ 
+			\hline
+			14.0 & 8.0 & 9.0 & 9.0 & 4.0 & 11.0 & 15.0 
+		\end{tabular}
+	\end{table}
+	
+	\begin{wrapfigure}{r}{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.3\textwidth]{3ctc}
+		\caption{第三版模型中不同訓練次數對意識表現的影響}
+	\end{wrapfigure}
 	
 	\CJKfakebold{發現}：
 	
@@ -597,13 +728,12 @@
 		\item 整體大致呈現隨訓練次數上升而有叫好的表現
 	\end{enumerate}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.3\textwidth]{3ctc}
-	\caption{第三版模型中不同訓練次數對意識表現的影響}
-\end{wrapfigure}
+
 
 	\CJKfakebold{思考}：模型確實有因為微調而表現出更多的角色意識和情感，且大致隨訓練次數增加而增加。
+	
+	}
+\parbox{\textwidth}{
 	
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
 	\CJKfakebold{結果}：三版模型中相同訓練次數對意識表現的影響如下表所示：
@@ -619,7 +749,7 @@
 
 \begin{wrapfigure}{r}{0.3\textwidth}
 	\centering
-	\includegraphics[width=0.3\textwidth]{v3}
+	\includegraphics[width=0.3\textwidth]{allcomp}
 	\caption{三版模型中相同訓練次數對意識表現的影響}
 \end{wrapfigure}
 
@@ -627,6 +757,7 @@
 	
 %	\subsection{五、圖靈測驗}
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
+}
 
 	\section{伍、討論}
 	

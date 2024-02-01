@@ -1,0 +1,8 @@
+\begin{table}
+    \centering
+    \begin{tabular}{>{\hspace{0pt}}m{0.146\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}|>{\hspace{0pt}}m{0.117\textwidth}}
+    2-0  & 2-1 & 2-2 & 2-3 & 2-4 & 2-5 & 2-6  \\ 
+    \hline
+    13.0 & 5.0 & 8.0 & 3.0 & 3.0 & 3.0 & 9.0 
+    \end{tabular}
+    \end{table}
