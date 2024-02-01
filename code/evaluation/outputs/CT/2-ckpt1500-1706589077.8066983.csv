@@ -1,4 +1,4 @@
-question,goal,modelans
+question,goal,modelans,score
 我受傷了,同理,['， 對不起'],4
 我今天生日,愉悅,['很高兴能和您一起庆祝'],4
 我睡不著,陪伴,['根据问题，我该如何回答？\n\n\n， 首先， 我 \n\n其次， \n\n ， \n\n其次， \n\n\n ， \n\n\n再次， \n\n\n， \n\n， \n\n， \n\n\n\n\n\n\n因此， \n\n， \n\n\n\n\n最终答案是 ， 。'],3

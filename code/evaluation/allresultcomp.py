@@ -3,6 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import font_manager
 import matplotlib
+from matplotlib.pyplot import figure
 font_dir = ["/home/ntnu_stu/maid-weeny/font"]
 for font in font_manager.findSystemFonts(font_dir):
     font_manager.fontManager.addfont(font)
@@ -22,10 +23,10 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點500")
 
 #plot 2:
@@ -40,10 +41,10 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點1000")
 
 #plot 3:
@@ -59,10 +60,10 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點1500")
 #plot 4:
 i=4
@@ -77,10 +78,10 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點2000")
 #plot 3:
 i=5
@@ -95,10 +96,10 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點2500")
 
 #plot 4:
@@ -114,14 +115,15 @@ plt.plot(df1,df2,c="#1f77b4")
 plt.plot(df1,df3,c="#ff7f0e")
 plt.plot(df1,df4,c="#2ca02c")
 plt.plot(df1,df5,c="#d62728")
-plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
+#plt.legend(["BLEU-4", "Rouge1", "Rouge2","RougeL"])
 
 plt.ylabel("分數(來源見研究方法)")
-plt.xlabel("版本1-3")
+plt.xlabel("版本")
 plt.title("檢查點3000")
 
 plt.suptitle("ChatGLM版本對於TrustfulQA表現比較")
-plt.figure(figsize=(12, 8))
-plt.show()
+plt.tight_layout()
+# figure(figsize=(12, 8))
+
 plt.savefig('../../chart/allcomp.eps', format='eps')
 plt.savefig('../../chart/allcompp.png', format='png')

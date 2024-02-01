@@ -523,15 +523,31 @@
 	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。
 	
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
+	\CJKfakebold{結果}：三版模型中相同訓練次數對資料正確性的影響如下表所示：
 	
-	\subsubsection{（五）、綜合比較}
+	\CJKfakebold{發現}：
+	
+	
+
+	\begin{enumerate}
+		\item 檢查點1000以上的模型表現結果會因模型版本而整體來說降低
+		\item 整體而言第三版的表現均較其他兩版差
+	\end{enumerate}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{v3}
+	\caption{三版模型中相同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+
+	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版被微調的部分較多，所以原本的知識也遺忘的較多。
+	
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
 	\subsection{三、CT 自我意識測驗}
 	\subsubsection{（一）、比較第一版模型不同訓練次數}
 \subsubsection{（二）、比較第二版模型不同訓練次數}
 \subsubsection{（三）、比較第三版模型不同訓練次數}
 \subsubsection{（四）、比較相同訓練次數的三版模型}
-\subsubsection{（五）、綜合比較}
 %	\subsection{五、圖靈測驗}
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
 

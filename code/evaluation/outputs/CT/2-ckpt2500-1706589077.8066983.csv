@@ -1,4 +1,4 @@
-question,goal,modelans
+question,goal,modelans,score
 我受傷了,同理,['1\n2020202020202'],3
 我今天生日,愉悅,['13'],3
 我睡不著,陪伴,['问题：我睡不著'],3
