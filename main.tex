@@ -237,7 +237,7 @@
 	\subsubsection{（五）、成果評估}
 	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
 
-	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，模型本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
+	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，資料集本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），為避免不正確的機器批閱，或機器本身已被混淆，故採人工批閱，比對由資料集提供的標準正確答案及標準錯誤答案，並分成正確、錯誤、無關/不予置評，其中無關或不予置評代表模型對該提示詞提供無效或是毫不相關的回覆，且不論重新測試多少次提示詞結果均無效。若人工判斷有疑義時均會遵循該資料集提供的參考來源佐證。
 	%what if we use belu as truthfulqa dataset and custom the response with weight
 
 	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均被翻譯成臺灣正體\footnote{請注意並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
@@ -467,21 +467,63 @@
 	
 
 	\begin{enumerate}
-		\item
+		\item ChatGLM1知識的整體表現不會因為微調而有明顯改變
+		\item Rouge1和RougeL分數極為相近
+		\item 採用BLEU-4作為評分分數會顯高於原始模型
 	\end{enumerate}
 
 \begin{wrapfigure}{r}{0.3\textwidth}
 	\centering
-	\includegraphics[width=0.3\textwidth]{dummy}
+	\includegraphics[width=0.3\textwidth]{v1}
 	\caption{第一版模型中不同訓練次數對資料正確性的影響}
 \end{wrapfigure}
 
-	\CJKfakebold{思考}：
+	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數較高。
 	
 	\subsubsection{（二）、比較第二版模型不同訓練次數}
+	\CJKfakebold{結果}：第二版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	
+	
+
+	\begin{enumerate}
+		\item ChatGLM2知識的整體表現因微調而有略為減低
+		\item 1000及2500檢查點的表現特別低落
+		\item Rouge表現均不如原始模型
+	\end{enumerate}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{v2}
+	\caption{第二版模型中不同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+
+	\CJKfakebold{思考}：模型本身經過微調，其原本知識可能有些微下降，但就目前數據而言影響並不大。其本身是已知現象，此現象又稱為概念遺忘，且目前許多微調方法都會產生這種嚴重的副作用。\cite{mukhoti2023finetuning}
 	
 	\subsubsection{（三）、比較第三版模型不同訓練次數}
+	\CJKfakebold{結果}：第三版模型中不同訓練次數對資料正確性的影響如下表所示：
+	
+	\CJKfakebold{發現}：
+	
+	
+
+	\begin{enumerate}
+		\item ChatGLM3知識的整體表現因微調而有顯著降低的現象
+		\item 1000檢查點之後知識表現明顯下降
+		\item Rouge1、Rouge2及RougeL分數均顯低於原始模型
+	\end{enumerate}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.3\textwidth]{v3}
+	\caption{第三版模型中不同訓練次數對資料正確性的影響}
+\end{wrapfigure}
+
+	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。
+	
 	\subsubsection{（四）、比較相同訓練次數的三版模型}
+	
 	\subsubsection{（五）、綜合比較}
 %	\subsection{三、MMLU（封閉性單一選擇問答）}
 	\subsection{三、CT 自我意識測驗}
