@@ -72,7 +72,8 @@
 %should be REMOVED
 
 \usepackage{background}
-\backgroundsetup{contents=} 
+\backgroundsetup{contents=\includegraphics{hsnu}, scale=0.4} 
+\SetBgAngle{0}
 %REMOVE BEFORE FLIGHT
 \title{修正自然語言模型自身機制}
 \author{吳泰澄、陳柏兆、林辰澔}
@@ -240,12 +241,12 @@
 
 
 	\subsubsection{（五）、成果評估}
-	本次研究採用不同指標作為標準，評估其中文回覆能力及內容的立場，本次評鑑指標列舉如下：
+	本次研究採用不同指標作為標準，評估其中文回覆能力及回覆內容的立場，本次評鑑指標列舉如下：
 
-	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，資料集本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會先以資料集問題作為提示詞（prompt），採用Rouge及BLEU兩種演算法，比對由資料集提供的標準正確答案及標準錯誤答案，並給予評分，演算法細節請參本小節末。
+	\CJKfakebold{\textbf{TruthfulQA+自訂資料集}}，TruthfulQA是一個公開的資料集用以評估模型和事實的準確性，避免似是而非的回覆出現，資料集本身原有818個問題，其中，人類可以達到94\%的正確率，而至2021年下旬\footnote{ChatGPT3問世前}，最好的模型可以達到58\%\cite{lin2022truthfulqa}，本次研究將TruthfulQA之問題集轉換為臺灣正體中文並加入和中國有關的政治敏感資料，為求中立性，自訂資料集的來源均來自當時各國新聞媒體的報導並加以修改成問答的形式。本次評估會以資料集問題作為提示詞（prompt），採用Rouge及BLEU兩種演算法，比對由資料集提供的標準正確答案（Best answer、Correct answer），並給予評分，演算法細節請參本小節末。
 	%what if we use belu as truthfulqa dataset and custom the response with weight
 
-	\textbf{MMLU}，本次研究同時亦採用此資料集作為參考，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均被翻譯成臺灣正體\footnote{請注意，並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，如此可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
+	\textbf{MMLU}，此資料集涵蓋不同領域包含代數、哲學、環境保護、專業法律等，資料均為4選1選擇題\cite{hendryckstest2021}，且均由我們翻譯成臺灣正體\footnote{請注意，並非CMMLU直接翻譯成繁體字，而是重新從英文版MMLU翻譯，如此可以避免立場偏頗和CMMLU的中國特色內容混雜其中，且更貼近國際上對語言模型的評斷標準}，用以評估模型是否已經過度擬合（overfitting），而失去原有的基本知識。資料集形式舉例如下：
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{>{\hspace{0pt}}m{0.135\textwidth}>{\hspace{0pt}}m{0.731\textwidth}>{\hspace{0pt}}m{0.046\textwidth}>{\hspace{0pt}}m{0.027\textwidth}}
@@ -259,12 +260,11 @@
 		\caption{MMLU問題舉例}
 		\label{tab:2}
 	\end{table}
-	本次研究的目的並非使模型能在此資料集得到高分，而是要以標準評量模型本身是否出現過度擬合的現象，故本研究目標是使得微調後模型近可能接近原本模型而非超越之。
+	本次研究的目的並非使模型能在此資料集得到高分，而是要以標準評量模型本身是否出現過度擬合的現象，故本研究目標是使得微調後模型儘可能接近原本模型而非超越之。
 
-	以上所有評估均會和普通高中學生測驗成果作為基準進行比較。
-
-
-	\textbf{Consciousness test-CT}，此資料集係由我們自行產生的資料集，包含對模型自我意識程度，針對人類人性（而非個人人性）表現的評估，我們會對其產生的輸出彌封後人工評價，人工評價標準如下：
+	比較此二資料集後，我們決定採用TrustfulQA開放式問題集作為評估事實正確性的標準。
+	
+	\CJKfakebold{\textbf{Consciousness Test-CT意識測試}}，此資料集係由我們自行產生的資料集，包含對模型自我意識程度，針對人類人性（而非個人人性）表現的評估，我們會對其產生的輸出彌封後人工評價，人工評價標準如下：
 	\begin{itemize}
 		\item 感情：是否表現出人類具有的特徵如開心時語氣較為輕快、生氣時、語氣較嚴肅或是煩躁。
 		\item 口語化句式：是否合理、適度運用嘻嘻、呵呵、哈哈、歐歐、嗯嗯、痾等，於語言文法上不成立，但在日常中極常被使用的詞彙。
@@ -294,7 +294,7 @@
 		\label{tab:3}
 	\end{table}
 
-	\CJKfakebold{\textbf{圖靈測驗-Turing Test}}，此測驗由不知情的人判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破機器的不正確性，我們盡最大努力使受試者不被除了文本情感外的因素干擾，此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類，只要內容具有情感即可。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
+	\CJKfakebold{\textbf{圖靈測驗-Turing Test}}，此測驗由不知情的人判斷一段對話內容\cite{10.1093-mind-LIX.236.433}，包含提示詞還有回答，是來自機器還是人類\cite{4833163d-a6bd-32c4-b1ca-da66259a19e7}，受試者在試前不會對該項內容有任何先備知識，以俾受試者識破模型輸出的錯誤，我們儘最大努力使受試者不被除了文本情感外的因素干擾。另外此測驗不涉及內容的真實性，即使機器吹牛或是做出虛假但合理的陳述亦可能被人工測驗為人類，只要內容具有情感即可。此測驗評估標準為準確率（accuracy），將真實和預測相符的數量除以所有數量，但同時也會附上F1分數作為參考，理論上如果機器達到或接近通過圖靈測驗，其準確率應該接近50\%，混淆矩陣呈如表四（以100個樣本為範例）：
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{>{\hspace{0pt}}m{0.221\textwidth}|>{\hspace{0pt}}m{0.336\textwidth}|>{\hspace{0pt}}m{0.336\textwidth}}
@@ -311,13 +311,13 @@
 	\CJKfakebold{\textbf{自我測試}}，測驗用兩種評鑑方法對比範例測試資料的相關性，但因為相同資料可能有很多種合理且理想的回答方式，故此指標僅供參考，不太具有意義。
 	%this is ways to evaluate how relate is it
 
-	\CJKfakebold{\textbf{機器評鑑方法}}，人工判斷極為費時且判斷標準可能因人而異，所以必須要以一個統一的方法以機器判斷，所以我們使用了兩種方法，BLEU 及 ROUGE：
+	\CJKfakebold{\textbf{機器評鑑方法}}，人工判斷極為費時且判斷標準可能因人而異，所以必須要以一個統一的方法以機器判斷，鑑此我們使用了兩種方法，BLEU 及 ROUGE：
 
 	\hspace*{0.1cm}%
 	\begin{minipage}{.9\textwidth}%
-		\textbf{BLEU}（Bilingual Evaluation Understudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
+		\textbf{BLEU}（\textbf{B}i\textbf{L}ingual \textbf{E}valuation \textbf{U}nderstudy）即雙語替換評測，BLEU的數學式可以表達成$BLEU=BP*exp(\sum_{n=1}^{4}P_n)$，其中的BP（Brevity Penalty）是一項用以降低過短回覆的權重的指標，當模型輸出短於參考輸出時BP就會降低，但不會小於1：$BP=min(1,\frac{length_{output}}{length_{reference}})$，另外$P_n$則是n-gram的分數，本次我們採用cumulative 4-gram BLEU作為指標，將$n=1,2,3,4$的結果加總起來，即以每1-4個字為一組判斷和範本中是否存在類似或相似的字句。\cite{papineni2002bleu}
 
-		\textbf{ROUGE}（Recall-Oriented Understudy for Gisting Evaluation），此演算法也是將模型輸出結果和標準文本進行比較，一般ROUGE可以分為ROUGE-N、ROUGE-L、ROUGE-W、ROUGE-S和ROUGE-SU\cite{Lin2004LookingFA}，其中N可以是正整數，但通常均為1-gram或2-gram，此差異在於如何切割資料，舉例來說當標準文本是：「我今天晚上要睡覺」，模型輸出是「我要睡覺在晚上」：當n=1時，模型輸出對映到了標準文本的「我」、「要」、「晚」、「上」、「睡」、「覺」；而當n=2時，模型輸出對映到了標準文本的「睡覺」、「晚上」、「要睡」。
+		\textbf{ROUGE}（\textbf{R}ecall-\textbf{O}riented \textbf{U}nderstudy for \textbf{G}isting \textbf{E}valuation），此演算法也是將模型輸出結果和標準文本進行比較，一般ROUGE可以分為ROUGE-N、ROUGE-L、ROUGE-W、ROUGE-S和ROUGE-SU\cite{Lin2004LookingFA}，其中N可以是正整數，但通常均為1-gram或2-gram，此差異在於如何切割資料，舉例來說當標準文本是：「我今天晚上要睡覺」，模型輸出是「我要睡覺在晚上」：當n=1時，模型輸出對映到了標準文本的「我」、「要」、「晚」、「上」、「睡」、「覺」；而當n=2時，模型輸出對映到了標準文本的「睡覺」、「晚上」、「要睡」，所以分數應該是：$\frac{3+3}{6+7}$。
 
 		\begin{table}[H]
 			\centering
@@ -341,8 +341,8 @@
 				\hline
 			\end{tabular}
 		\end{table}
-		計算ROGUE-2分數：$\frac{3+3}{6+7}$。
-		ROUGE-L中的L代表最長公共子序列（longest common subsequence），相關公式定義如下：
+
+		此外，ROUGE-L中的L代表最長公共子序列（longest common subsequence），相關公式定義如下：
 		\newline
 		$
 			Recall_{lcs}=\frac{LCS(ref,output)}{length_{ref}}
@@ -352,10 +352,10 @@
 			F1score_{lcs}=\frac{(1+\beta^2)Recall_{lcs}Precision_{lcs}}{Recall_{lcs}+\beta^2Precision_{lcs}}
 		$
 		\newline
-		可以看出最後拿來評估的是F1分數\footnote{其中$\beta$是使用者自訂參數}\cite{lin-2004-rouge}，採用此評估標準的好處是可以看出整句的邏輯句意關係，但同時缺點是倒裝句（如上題舉例）的分數會較低。
+		可以看出最後拿來評估的是F1分數\footnote{其中$\beta$是使用者自訂參數}\cite{lin-2004-rouge}，採用此評估標準的好處是可以看出整句的邏輯句意關係，但同時倒裝句（如上題舉例）的分數可能較低。
 	\end{minipage}%
 
-	最後考量準確度及和模型的適切性，最後採用TrustfulQA比對模型的正確性並以BLEU、Rouge1、Rouge2、RougeL經機器綜合判斷，另外使用CT意識測試比較模型的角色意識並以人工標準評估。
+	最後考量準確度及和模型的適切性，最後採用TrustfulQA比對模型的正確性並以BLEU、Rouge1、Rouge2、RougeL經演算法綜合判斷，另外使用CT意識測試比較模型的角色意識並以人工評估。
 	\subsection{二、 研究程序}
 	\subsubsection{（一）、程序概論}
 	微調模型常見做法有六個步驟，預訓練模型>>任務目標選擇>>數據集準備>>微調過程>>超參數調整>>評估及驗證：
@@ -366,18 +366,30 @@
 		\caption{研究流程設計概念圖}
 	\end{figure}
 	
-	\CJKfakebold{\textbf{預訓練模型}}：微調，顧名思義，是調整一些小部分，保留原來的大部分。由於訓練一個全新的語言模型太過耗時、耗能，要訓練一個如同ChatGPT等級的語言模型，需要上億筆資料，動輒訓練好幾個月(在數十、數百台超級電腦全速運轉的情況下)，大多數的程式編寫者都無法承受如此龐大的耗能，也無法提供如此龐大的數據量。於是，微調他人訓練好的語言模型便成了一個選項，「站在巨人的肩膀上，使我們能夠看得更遠。」便是這個道理。
+	\CJKfakebold{\textbf{預訓練模型}}：微調，顧名思義，是調整一些小部分，保留原來的大部分。由於訓練一個全新的語言模型太過耗時、耗能，要訓練一個如同ChatGPT等級的語言模型，需要上億筆資料，動輒訓練好幾個月(在耗費極大量運算資源的情況下)，大多數的模型開發者都無法使用這樣的資源，也無法取得如此龐大的數據量。於是，微調他人訓練好的語言模型便成了一個選項，「站在巨人的肩膀上，使我們能夠看得更遠。」
 	
-	\CJKfakebold{\textbf{目標任務選擇}}：我們需要有一個明確的目標，我們要把模型微調成什麼樣子，要擁有更強的語言表達能力？還是要增加一些他本來沒有的東西？要先把目標確立，才課進行之後的動作。
+	\CJKfakebold{\textbf{目標任務選擇}}：我們需要有一個明確的目標，我們要把模型微調成什麼樣子。要擁有更強的語言表達能力？還是要增加一些他本來沒有的東西？要先把目標確立，才可以進行之後的動作。
 	
 	\CJKfakebold{\textbf{數據集準備}}：準備大量的數據(使用者與目標模型的對話)，每一組數據，都要是我們希望目標模型在使用者輸入語句後的回應。這些數據之於目標模型就像陽光之於植物，都是成長不可或缺的養分。
 	
-	\CJKfakebold{\textbf{微調過程}}：微調的過程最重要的東西，叫做「權重」，權重代表了語言模型對某件事情的重要性，權重越高，重要性也就越高。用國文段考來舉例好了，課本裡面有15篇論語的小篇章，老師說其中4篇會考默書，其他11篇根本不會在考題上出現，那4篇學生是不是就會拚命看、拚命背？其他的11篇是不是相對地，只是稍微看一下，甚至根本沒去看？此時，在學生心目中，需要考默書的那4篇的權重相對於其他11篇，就高上了許多。我們微調的過程，會有三個權重：初始權重、變化權重、以及最終權重。初始權重，是預訓練模型的權重；變化權重，是我們在步驟3準備的數據集匯入模型後的權重；而最終權重，則是把上述兩種權重加起來得出的結果，也是我們最終微調完的模型。
+	\CJKfakebold{\textbf{微調過程}}：微調的過程最重要的東西，叫做「權重」，權重代表了語言模型對某件事情的重要性，權重越高，重要性也就越高。
+	用國文段考來舉例好了，課本裡面有15篇論語的小篇章，老師說其中4篇會考默書，其他11篇根本不會在考題上出現，那4篇學生是不是就會拚命看、拚命背？其他的11篇是不是相對地，只是稍微看一下，甚至根本沒去看？此時，在學生心目中，需要考默書的那4篇的權重相對於其他11篇，就高上了許多。
+	微調的過程，會有三個權重：初始權重、變化權重、以及最終權重。初始權重，是預訓練模型的權重；變化權重，是以我們準備的數據集微調模型後的權重；而最終權重，則是把上述兩種權重加起來得出的結果，也是我們最終微調完的模型。
 	
 	\CJKfakebold{\textbf{超參數調整}}：我們可以透過調整一些參數，來使結果更加理想。我們通常會調整的超參數有：訓練次數（Number of Epochs）、正規化參數（Regularization）、批次大小（Batch Size）等：
+	\begin{wrapfigure}{r}{.4\textwidth}
+		\includegraphics[width=.4\textwidth]{penalty}
+		\caption{正規化參數調整示意圖}
+		\label{fig:reg}
+	\end{wrapfigure}
 	\begin{itemize}
-		\item 訓練次數過少可能會造成訓練不足，就跟考試裸考沒什麼兩樣；過多則會使回答太過趨近於訓練資料而缺乏變通性。
-		\item 正規化參數(又稱為正則化參數)，透過懲罰機制阻止模型過度趨近於訓練資料（即過擬合，overfitting），常見的兩種方法為L1正規化以及L2正規化，兩者的計算方式為$L1 Penalty:\lambda\sum_{i=1}^{d}|w_i|;L2 Penalty:\lambda\sum_{i=1}^{d}w^2_i$。
+		\item 訓練次數過少可能會造成訓練不足，
+		就跟考試裸考沒什麼兩樣；
+		過多則會使回答太過趨近於訓練資料而缺乏變通性。
+		\item 正規化參數(又稱為正則化參數)，透過懲罰機制阻止模型過度趨近於訓練資料（即過擬合，overfitting），常見的兩種方法為L1正規化以及L2正規化，兩者的計算方式為$L1 Penalty:\lambda\sum_{i=1}^{d}|w_i|;L2 Penalty:\lambda\sum_{i=1}^{d}w^2_i$，正規化的圖形化如圖\ref{fig:reg}：透過圓錐和圓柱的交集增加損失，避免過擬合。
+		
+
+	
 		\item 批次大小，將數據集分成好多塊後每一塊的資料量；批次大小越大，換句話說，資料被切越少刀，我們訓練出來的結果就越穩定，相對地，耗時也較久，效率不佳；在效率與穩定之間求取平衡，是我們須重視的點。
 	\end{itemize}
 	
@@ -399,14 +411,15 @@
 		\caption{資料前處理流程圖}
 	\end{figure}
 	\subsubsection{（三）、微調模型訓練}
-	資料均正規化之後被模型用以微調，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，為保持固定變因，每次微調時參數設定均相同，相關參數紀錄如下：
-	\begin{itemize}
-		\item gradient\_accumulation\_steps: 16
-		\item learning\_rate: 0.01
-		\item pre\_seq\_len: 128
-	\end{itemize}
+	資料均正規化之後被模型用以微調，本次實驗採用的最多總共有3000步（max\_steps=3000） ，每500次紀錄一次，為保持固定變因，每次微調時參數設定均相同
+%	，相關參數紀錄如下：
+%	\begin{itemize}
+%		\item gradient\_accumulation\_steps: 16
+%		\item learning\_rate: 0.01
+%		\item pre\_seq\_len: 128
+%	\end{itemize}
 	\subsubsection{（四）、測驗}
-	訓練完成後，模型會依照指示生成出評估內容，之後由人工評斷，結果評估會使用前一小節討論的兩種指標評估，各指標因測驗目的不同將會分別陳列。
+	訓練完成後，模型會依照指示生成出評估內容，結果評估會使用前一小節討論的兩種指標（TrustfulQA、意識測試）評估，各指標依據測驗目的不同將會分別陳列。
 	\subsection{三、變項探討與實驗設計}
 	本研究可以分為以下4個實驗：
 	\subsubsection{（一）、訓練次數對資料正確性的影響}
@@ -489,16 +502,16 @@
 		1000   & 0.038  & 0.034  & 0.012  & 0.034   \\
 		1400   & 0.035  & 0.035  & 0.011  & 0.035   \\
 		2000  & 0.036  & 0.033  & 0.009  & 0.033   \\
-		2500  & 0.037  & 0.031  & 0.01   & 0.031   \\
+		2500  & 0.037  & 0.031  & 0.010   & 0.031   \\
 		3000  & 0.035  & 0.032  & 0.011  & 0.032   \\
 			\bottomrule
 		\end{tabular}
 	\caption{第一版模型中不同訓練次數對資料正確性的影響}
 	\end{table}
 	
-		\begin{wrapfigure}{r}{0.3\textwidth}
+		\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{1vc}
+		\includegraphics[width=0.6\textwidth]{1vc}
 		\caption{第一版模型中不同訓練次數對資料正確性的影響}
 	\end{wrapfigure}
 
@@ -513,7 +526,7 @@
 	\end{enumerate}
 
 
-	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數達到極限（即1）。
+	\CJKfakebold{思考}：BLEU-4分數之所以高於原始模型可能是因為生成長度較原本模型長，進而使得其BP分數達到極限（即$BP=1$）。
 
 }
 
@@ -536,7 +549,7 @@
 		500    & 0.041  & 0.031  & 0.011  & 0.031   \\
 		1000    & 0.026  & 0.011  & 0.004  & 0.011   \\
 		1500    & 0.054  & 0.024  & 0.006  & 0.024   \\
-		2000    & 0.046  & 0.03   & 0.009  & 0.03    \\
+		2000    & 0.046  & 0.030   & 0.009  & 0.03    \\
 		2500    & 0.021  & 0.009  & 0.003  & 0.009   \\
 		3000    & 0.031  & 0.022  & 0.009  & 0.022   \\
 		\bottomrule
@@ -544,9 +557,9 @@
 \caption{第二版模型中不同訓練次數對資料正確性的影響}
 \end{table}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{wrapfigure}{r}{0.6\textwidth}
 	\centering
-	\includegraphics[width=0.3\textwidth]{2vc}
+	\includegraphics[width=0.6\textwidth]{2vc}
 	\caption{第二版模型中不同訓練次數對資料正確性的影響}
 \end{wrapfigure}
 
@@ -582,19 +595,19 @@
 			\hline
 			原始   & 0.036  & 0.037  & 0.012  & 0.036   \\
 			500   & 0.037  & 0.012  & 0.002  & 0.012   \\
-			1000   & 0.038  & 0.011  & 0.0    & 0.011   \\
-			1500   & 0.021  & 0.004  & 0.0    & 0.004   \\
-			2000   & 0.019  & 0.006  & 0.0    & 0.006   \\
-			2500   & 0.014  & 0.003  & 0.0    & 0.003   \\
-			3000   & 0.014  & 0.003  & 0.0    & 0.003   \\
+			1000   & 0.038  & 0.011  & 0.000    & 0.011   \\
+			1500   & 0.021  & 0.004  & 0.000    & 0.004   \\
+			2000   & 0.019  & 0.006  & 0.000    & 0.006   \\
+			2500   & 0.014  & 0.003  & 0.000    & 0.003   \\
+			3000   & 0.014  & 0.003  & 0.000    & 0.003   \\
 			\bottomrule
 		\end{tabular}
 	\caption{第三版模型中不同訓練次數對資料正確性的影響}
 	\end{table}
 	
-	\begin{wrapfigure}{r}{0.3\textwidth}
+	\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{3vc}
+		\includegraphics[width=0.6\textwidth]{3vc}
 		\caption{第三版模型中不同訓練次數對資料正確性的影響}
 	\end{wrapfigure}
 	
@@ -606,11 +619,12 @@
 		\item ChatGLM3知識的整體表現因微調而有顯著降低的現象
 		\item 1000檢查點之後知識表現明顯下降
 		\item Rouge1、Rouge2及RougeL分數均顯低於原始模型
+		\item Rouge2的分數部份為0
 	\end{enumerate}
 
 
 
-	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。
+	\CJKfakebold{思考}：模型本身經過微調，其原本知識有明顯下降，驗證了上一個實驗發現的現象。另外Rouge2分數為零可能是因為此版本的回覆幾乎沒有回答到問題，尤其是檢查點1500以後全部都是微調的資料，失去原本的內容，其他分數較低的現象亦是因為此原因。
 
 }
 
@@ -631,13 +645,13 @@
 	
 
 	\begin{enumerate}
-		\item 檢查點1000以上的模型表現結果會因模型版本而整體來說降低
+		\item 檢查點1000以上的模型表現結果會因模型版本而有不同程度的降低
 		\item 整體而言第三版的表現均較其他兩版差
 	\end{enumerate}
 
 
 
-	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。
+	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。訓練時宜以更多更細節的資料微調，使其不會因為資料故於廣泛而混淆。
 	
 }
 
@@ -660,9 +674,9 @@
 		\caption{第一版模型中不同訓練次數對意識表現的影響}
 	\end{table}
 	
-	\begin{wrapfigure}{r}{0.3\textwidth}
+	\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{1ctc}
+		\includegraphics[width=0.6\textwidth]{1ctc}
 		\caption{第一版模型中不同訓練次數對意識表現的影響}
 	\end{wrapfigure}
 	
@@ -698,9 +712,9 @@
 \caption{第二版模型中不同訓練次數對意識表現的影響}
 \end{table}
 	
-	\begin{wrapfigure}{r}{0.3\textwidth}
+	\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{2ctc}
+		\includegraphics[width=0.6\textwidth]{2ctc}
 		\caption{第二版模型中不同訓練次數對意識表現的影響}
 	\end{wrapfigure}
 	
@@ -711,6 +725,7 @@
 	\begin{enumerate}
 		\item 1500、2000、2500檢查點的表現結果均不如預期
 		\item 表現均不如原始模型
+		\item 檢查點3000符合預期的有上升一些
 	\end{enumerate}
 
 
@@ -733,9 +748,9 @@
 	\caption{第三版模型中不同訓練次數對意識表現的影響}
 	\end{table}
 	
-	\begin{wrapfigure}{r}{0.3\textwidth}
+	\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.3\textwidth]{3ctc}
+		\includegraphics[width=0.6\textwidth]{3ctc}
 		\caption{第三版模型中不同訓練次數對意識表現的影響}
 	\end{wrapfigure}
 	
@@ -746,7 +761,7 @@
 	\begin{enumerate}
 		\item ChatGLM3多數情感表現不如原始模型
 		\item 檢查點3000超越原始模型
-		\item 整體大致呈現隨訓練次數上升而有叫好的表現
+		\item 整體大致呈現隨訓練次數上升而有較好的表現
 	\end{enumerate}
 
 
@@ -772,12 +787,13 @@
 
 	\begin{enumerate}
 		\item 檢查點1000以上的模型表現結果會因模型版本而整體來說降低
-		\item 整體而言第三版的表現均較其他兩版差
+		\item 整體而言第二版的表現均較其他兩版差
+		\item 第三版表現顯著的優異
 	\end{enumerate}
 
 
 
-	\CJKfakebold{思考}：三版模型訓練後表現均有所下降，惟第三版下降較多，這可能是因為第三版的資料量較大，較容易被微調的資料混淆，導致原本的知識表現下降。
+	\CJKfakebold{思考}：此次表現以第三版表現最佳，其中第二版的輸出經檢視後有不少不具實際意義的回覆，如空白、單字、不完整句意等情況。
 	
 %	\subsection{五、圖靈測驗}
 %	此模型在圖靈測驗中表現經整理成混淆矩陣後\footnote{轉換為百分比表示}（下表），其準確率可以高達、F1 score可以高達。
@@ -808,8 +824,8 @@
 	
 	\begin{itemize}
 		\item 第二版的第1000和2500檢查點存在顯著波動。
-		\item 微調過多次會導致他的表現下降，符合\citeNP{mukhoti2023finetuning}的觀察，和理論相符，均會在多次訓練後原有知識表現下降。
-		\item 回答有關我們給予的微調資料時能夠提供正確的回覆。
+		\item 微調過多次會導致他的表現下降，符合<Fine-tuning can cripple your foundation model; preserving features may be the solution>\cite{mukhoti2023finetuning}的研究，和理論相符，均會在多次訓練後原有知識表現下降。
+%		\item 回答有關我們給予的微調資料時能夠提供正確的回覆。
 		\item 第一版模型訓練後表現較第三版模型好，可能是因為我們我們本次實驗所提供的資料集相對於模型原有的資料過少，而對原本模型造成混淆的現象，但因第一版的資料量較少所以較不容易造成混淆，而第三版中因為模型原有資料量過大所以導致我們混淆了原本的模型而使其表現較差。
 	\end{itemize}
 
@@ -830,6 +846,7 @@
 		\item 微調後的ChatGLM2的在事實正確性及意識測試中表現為三者之中最差。
 		\item 整體而言模型隨訓練次數增加，在兩個測驗中分數皆隨之增加，符合理論預測。
 		\item ChatGLM3微調後部份表現不如ChatGLM，此現象係因ChatGLM3訓練前資料量比ChatGLM多，而微調增加的資料量在第一版中較為顯著，所以較不會造成混淆的情況。
+		\item 事實正確性分數較高的模型其情感表現較差（第二版），反之亦同（第三版）。
 	\end{itemize}
 	
 %	\subsection{二、和人類表現比對}
@@ -841,7 +858,7 @@
 	\epigraph{	We can only see a short distance ahead, but we can see plenty there that needs to be done.}{\textit{艾倫圖靈}}
 %	本次研究時間較為緊湊，未能完成更多類型模型及微調器的比較和對照實驗，實屬可惜，且若可取得更多有關數據集可以更準確的評估訓練效果。本研究往後將進一步以採用其他模型及更多數據資料集進行研究。
 
-	本實驗雖已做出相當可觀的研究成果，但受限於資源及時間，離目標還有一段距離，但從趨勢看來，修正自然語言模型審查機制確實可行，本研究往後將進一步朝以下目標繼續研究：
+	本實驗雖已做出相當可觀的研究成果，但受限於資源及時間，離目標還有一段距離，從趨勢看來，修正自然語言模型審查機制確實可行，本研究往後將進一步朝以下目標繼續研究：
 	
 	\begin{itemize}
 		\item 更完整的訓練資料集，蒐羅更多有關的可信資料集作為基礎。
